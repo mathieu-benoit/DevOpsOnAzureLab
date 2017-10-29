@@ -4,3 +4,5 @@ src/MainWebApplication/.vs/
 src/MainWebApplication/MainWebApplication/obj/
 src/MainWebApplication/MainWebApplication/bin/
 src/MainWebApplication/MainWebApplication/wwwroot/lib/
+/src/MainWebApplication/XUnitTestProject/bin/
+/src/MainWebApplication/XUnitTestProject/obj/
