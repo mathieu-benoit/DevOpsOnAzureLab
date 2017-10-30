@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace XUnitTestProject
+namespace MainWebApplicationUnitTests
 {
     public class SampleUnitTest
     {
