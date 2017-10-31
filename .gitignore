@@ -6,3 +6,6 @@ src/MainWebApplication/MainWebApplication/bin/
 src/MainWebApplication/MainWebApplication/wwwroot/lib/
 /src/MainWebApplication/MainWebApplicationUnitTests/bin/
 /src/MainWebApplication/MainWebApplicationUnitTests/obj/
+/src/MainWebApplication/MainWebApplicationSeleniumTests/bin/
+/src/MainWebApplication/MainWebApplicationSeleniumTests/obj/
+/src/MainWebApplication/packages/

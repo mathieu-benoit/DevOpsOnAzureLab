@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is used during the CD pipeline to execute the UITests with VSTS -->
+<RunSettings>
+	<!-- Parameters used by tests at runtime -->
+	<TestRunParameters>
+		<Parameter value="" name="BaseUrl"/>
+    <Parameter value="" name="Browser"/>
+	</TestRunParameters>
+</RunSettings>

@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MainWebApplication", "MainW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MainWebApplicationUnitTests", "MainWebApplicationUnitTests\MainWebApplicationUnitTests.csproj", "{7D8386D1-C965-4135-BEF8-64E3BCE8F2D2}"
 EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "MainWebApplicationAzureResourceGroup", "MainWebApplicationAzureResourceGroup\MainWebApplicationAzureResourceGroup.deployproj", "{DD277F52-E462-4D3E-9464-DD3FD7D6697E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainWebApplicationSeleniumTests", "MainWebApplicationSeleniumTests\MainWebApplicationSeleniumTests.csproj", "{DBDB149C-A32E-4037-8521-006CCC705BA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{7D8386D1-C965-4135-BEF8-64E3BCE8F2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D8386D1-C965-4135-BEF8-64E3BCE8F2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D8386D1-C965-4135-BEF8-64E3BCE8F2D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD277F52-E462-4D3E-9464-DD3FD7D6697E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD277F52-E462-4D3E-9464-DD3FD7D6697E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD277F52-E462-4D3E-9464-DD3FD7D6697E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD277F52-E462-4D3E-9464-DD3FD7D6697E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBDB149C-A32E-4037-8521-006CCC705BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBDB149C-A32E-4037-8521-006CCC705BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBDB149C-A32E-4037-8521-006CCC705BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBDB149C-A32E-4037-8521-006CCC705BA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
