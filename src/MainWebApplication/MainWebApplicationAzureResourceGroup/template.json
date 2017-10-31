@@ -37,7 +37,7 @@
     }
   },
   "variables": {
-    "webSiteName": "[concat('webSite', uniqueString(resourceGroup().id))]"
+    "webSiteName": "[parameters('hostingPlanName')]"
   },
   "resources": [
     {
