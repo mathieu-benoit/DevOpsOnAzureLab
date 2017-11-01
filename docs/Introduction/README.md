@@ -24,4 +24,8 @@ How we measure success?
 - Increased customer satisfaction
 - Dynamic and Secure
 
-Start your lab: 2. [Lab 1 - Source control](./Lab%201%20-%20Source%20control)
+Example of the Agile/DevOps move the VSTS team at Microsoft did:
+
+![VSTS Team - Before/After](./imgs/VSTSTeam-BeforeAfter.PNG)
+
+Start your lab: [Lab 1 - Source control](../Lab%201%20-%20Source%20control/README.md)

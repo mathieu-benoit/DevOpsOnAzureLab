@@ -1,14 +1,10 @@
-Previous lab: [Introduction](../Introduction)
+Previous lab: [Introduction](../Introduction/README.md)
 
 # Lab 1 - Source control
 
-Duration: 10 min
+Duration: 15 min
 
-The goal of this lab is to setup a [Git source control with VSTS](https://docs.microsoft.com/en-us/vsts/git/overview) for a given application. You will go through 3 main sections in this lab:
-
-- Import existing Git repository
-- Setup branch policies
-- Setup Slack notification for "Pull Request created"
+The goal of this lab is to setup a [Git source control with VSTS](https://docs.microsoft.com/en-us/vsts/git/overview) for a given application. 
 
 Best practices highlighted:
 
@@ -16,15 +12,26 @@ Best practices highlighted:
 - Configuration of policies regarding branch, commit and pull request
 - Automate the communication with your teammates through Slack notifications
 
+You will go through 3 main sections in this lab:
+
+- Import existing Git repository
+- Setup branch policies
+- Setup Slack notification for "Pull Request created"
+
 ## Import existing Git repository
 
 1. Go to your VSTS account https://<yourvstsaccount.visualstudio.com
+
+TODO - Open project the "MyFirstProject"
+
 2. Navigate to the "Code" tab
 3. Use the [Import into an existing empty repository](https://docs.microsoft.com/en-us/vsts/git/import-git-repository#import-into-an-existing-empty-repo) feature by hitting the "Import" button like illustrated on the image below.
 
 ![VSTSCode - Import GitHub Repository](./imgs/VSTSCode-ImportGitHubRepository.PNG)
 
 4. Set the fields "Source type" to "Git" and "Clone URL" to `https://github.com/mathieu-benoit/DevOpsOnAzureLab.git` and click on "Import"
+
+TODO - Save changes
 
 ## Setup branch policies
 
@@ -43,7 +50,10 @@ Best practices highlighted:
 
 ![Slack - Add Visual Studio Integration - Code Pushed](./imgs/Slack-AddVisualStudioIntegration-CodePushed.PNG)
 
-9. Once the result page is displayed ("New integration added!"), you will copy the "WebHook URL" field value "https://hooks.slack.com/services/..." to be used during the next steps. Scroll down at the bottom of this page to click on the "Save Integration" button.
+9. Once the result page is displayed ("New integration added!"), you will copy the "WebHook URL" field value "https://hooks.slack.com/services/..." to be used during the next steps. 
+
+TODO - REMOVE THIS PART? - Scroll down at the bottom of this page to click on the "Save Integration" button.
+
 10. Go to the "Service Hooks" of the "Admin" page of your VSTS project and from there click on the "Create subscription" button like illustrated below.
 
 ![ServiceHooks - Notification To Slack - Setup](./imgs/ServiceHooks-NotificationToSlack-Setup.PNG)
@@ -56,4 +66,4 @@ Best practices highlighted:
 
 You are now all set for this lab. All these concepts will be used and illustrated with the next labs.
 
-Next lab: [Lab 02 - Continuous integration](../Lab%2002%20-%20Continuous%20integration/README.md)
+Next lab: [Lab 02 - Continuous integration](../Lab%202%20-%20Continuous%20integration/README.md)

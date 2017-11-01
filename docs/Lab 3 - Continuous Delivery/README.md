@@ -1,4 +1,4 @@
-Previous lab: [Lab 2 - Continuous Integration](./Lab%202%20-%20Continuous%20Integration)
+Previous lab: [Lab 2 - Continuous Integration](../Lab%202%20-%20Continuous%20Integration/README.md)
 
 # Lab 3 - Continuous Delivery
 
@@ -6,12 +6,7 @@ Duration: 20 min
 
 ![Delivery - Overview](./imgs/Delivery-Overview.PNG)
 
-The goal of this lab is to ... You will go through 4 main sections in this lab:
-
-- Create a Release definition
-- Deploy the infrastructure and the app
-- Run the UITests
-- Commit a fix in the UITests to trigger the pipeline: CI --> CD
+The goal of this lab is to ... 
 
 Best practices highlighted:
 
@@ -22,7 +17,16 @@ Best practices highlighted:
 - Auto-trigger the CD when the CI is completed
 - Automate the communication with your teammates through Slack notifications
 
+You will go through 4 main sections in this lab:
+
+- Create a Release definition
+- Deploy the infrastructure and the app
+- Run the UITests
+- Commit a fix in the UITests to trigger the pipeline: CI --> CD
+
 ## Create the Release definition to deploy the "app" artifact in DEV environment
+
+TODO - Merge app, infra, ui test steps with an import of Tasks Group
 
 - Choose an Azure App Service Deploy
   - Version 2.*
@@ -70,4 +74,4 @@ TODO
   - Action: Delete resource group
   - ResourceGroup: $(DevResourceGroup)
 
-Next lab: [Lab 4 - Monitoring](./Lab%204%20-%20Monitoring)
+Next lab: [Lab 4 - Monitoring](../Lab%204%20-%20Monitoring/README.md)

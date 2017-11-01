@@ -1,13 +1,9 @@
-Previous lab: []()
+Previous lab: [Lab 4 - Monitoring](../Lab%204%20-%20Monitoring/README.md)
 
 # Lab 5 - Decoupling with Microservices
 
 Duration: 5 min
 
-## Introduction
+TODO
 
-## Steps
-
-## Resources
-
-Next lab: []()
+Next lab: [Conclusion](../Conclusion/README.md)

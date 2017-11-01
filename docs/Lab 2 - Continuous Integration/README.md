@@ -1,16 +1,12 @@
-Previous lab: [Lab 1 - Source control](./Lab%201%20-%20Source%20control)
+Previous lab: [Lab 1 - Source control](../Lab%201%20-%20Source%20control/README.md)
 
 # Lab 2 - Continuous Integration
 
-Duration: 20 min
+Duration: 45 min
 
 ![Develop - Build - Overview](./imgs/Develop-Build-Overview.PNG)
 
-The goal of this lab is to configure the different steps of the Continuous Integration (CI) process for a given web app through a VSTS Build Definition. The basic concepts of a CI phase is to expose different artifacts which will be used during the next Continuous Delivery (CD) phase. You will finally trigger 2 builds to see what will happen: manually and auto-triggered by a commit. You will go through 3 main sections in this lab:
-
-- Create the VSTS Build definition and expose the "app" artifact
-- Fix the unit test issue by submitting a new branch and pull request
-- Expose the "infra" and "ui-tests" artifacts
+The goal of this lab is to configure the different steps of the Continuous Integration (CI) process for a given web app through a VSTS Build Definition. The basic concepts of a CI phase is to expose different artifacts which will be used during the next Continuous Delivery (CD) phase. You will finally trigger 2 builds to see what will happen: manually and auto-triggered by a commit. 
 
 Best practices highlighted:
 
@@ -19,6 +15,12 @@ Best practices highlighted:
 - Create a work item on build failure as bug in the backlog
 - Generate artifacts to be reused in a separate Continuous Delivery (CD) process
 - Automate the communication with your teammates through Slack notifications
+
+You will go through 3 main sections in this lab:
+
+- Create the VSTS Build definition and expose the "app" artifact
+- Fix the unit test issue by submitting a new branch and pull request
+- Expose the "infra" and "ui-tests" artifacts
 
 ## Create the VSTS Build definition and expose the "app" artifact
 
@@ -40,7 +42,9 @@ src/MainWebApplication/MainWebApplicationUnitTests/MainWebApplicationUnitTests.c
 
 ![VSTSBuild - Setup Definition](./imgs/VSTSBuild-SetupDefinition.PNG)
 
-5. Go to the `Publish` step (4th) and rename it by `Package`. Go to the `Publish Artifact` step (5th) and rename it by `Expose "app" Artifact` and change the field "Artifact name" from `drop` to `app`. 
+TODO - Update screenshot to have "**/*UnitTests/*.csproj"
+
+5. Go to "Tasks" tab of this Build definition and click on the `Publish` step (4th) and rename it by `Package`. Go to the `Publish Artifact` step (5th) and rename it by `Expose "app" Artifact` and change the field "Artifact name" from `drop` to `app`. 
 
 6. Navigate to the "Trigger" tab of this Build definition page and enable the "Trigger status" of the "Continuous Integration" section.
 
@@ -64,6 +68,10 @@ src/MainWebApplication/MainWebApplicationUnitTests/MainWebApplicationUnitTests.c
 
 11. Go to the VSTS "Code" main tab to create a new branch based on the master branch. Click on "New branch" action and name it as `fix-unit-test` and then click on the "Create branch" button:
 
+TODO - Review the name of the branch with good practices? mathieu-benoit/fix-unit-test
+
+TODO - Create branch from WorkItem instead to demonstrate the integration?
+
 ![VSTSCode  - Create New Branch](./imgs/VSTSCode-CreateNewBranch.PNG)
 
 12. Navigate to the `src/MainWebApplication/MainWebApplicationUnitTests/SampleUnitTest.cs` file on this `fix-unit-test` branch. Click on the "Edit" button (top right hand corner) and then update the line 22 by replacing `return y + y;` by `return x + y;`. Click on the "Commit..." button (top right hand corner again) and on the "Commit" button once poped up.
@@ -84,6 +92,10 @@ src/MainWebApplication/MainWebApplicationUnitTests/MainWebApplicationUnitTests.c
 
 16. Duplicate the "Expose "app" artifact" and change the values: "Display name" into `Expose "infra" Artifact`, "Path to publish" into `src/MainWebApplication/MainWebApplicationAzureResourceGroup` and "Artifact name" into `infra`.
 
+TODO - Add the fact that there is the "app" artifact.
+
+TODO - Import Task Group instead of create manually the steps below
+
 17. Add a new step - NuGet restore - TODO
 
 18. Add a new step - Build UITest - MSBuild - TODO
@@ -96,4 +108,4 @@ src/MainWebApplication/MainWebApplicationUnitTests/MainWebApplicationUnitTests.c
 
 You are now all set for this lab. Let's see how the 3 artifacts of the CI will be used with the next lab.
 
-Next lab: [Lab 3 - Continuous Delivery](./Lab%203%20-%20Continuous%20Delivery)
+Next lab: [Lab 3 - Continuous Delivery](../Lab%203%20-%20Continuous%20Delivery/README.md)

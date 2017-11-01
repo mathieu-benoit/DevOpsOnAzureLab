@@ -4,13 +4,13 @@ This DevOps on Microsoft Azure lab is dedicated to demonstrate step-by-step how 
 
 ## Agenda of this lab:
 
-1. [Introduction](./Introduction)
-2. [Lab 1 - Source control](./Lab%201%20-%20Source%20control)
-3. [Lab 2 - Continuous Integration](./Lab%202%20-%20Continuous%20Integration)
-4. [Lab 3 - Continuous Delivery](./Lab%203%20-%20Continuous%20Delivery)
-5. [Lab 4 - Monitoring](./Lab%204%20-%20Monitoring)
-6. [Lab 5 - Decoupling with Microservices](./Lab%205%20-%20Decoupling%20with%20Microservices)
-7. [Conclusion](./Conclusion)
+1. [Introduction](./docs/Introduction/README.md)
+2. [Lab 1 - Source control](./docs/Lab%201%20-%20Source%20control/README.md)
+3. [Lab 2 - Continuous Integration](./docs/Lab%202%20-%20Continuous%20Integration/README.md)
+4. [Lab 3 - Continuous Delivery](./docs/Lab%203%20-%20Continuous%20Delivery/README.md)
+5. [Lab 4 - Monitoring](./docs/Lab%204%20-%20Monitoring/README.md)
+6. [Lab 5 - Decoupling with Microservices](./docs/Lab%205%20-%20Decoupling%20with%20Microservices/README.md)
+7. [Conclusion](./docs/Conclusion/README.md)
 
 ## Prerequisities
 
@@ -35,3 +35,10 @@ This DevOps on Microsoft Azure lab is dedicated to demonstrate step-by-step how 
 ## Resources
 
 - [12-Factor App](https://12factor.net/)
+- [Journey to Cloud Cadence](https://www.youtube.com/watch?v=Lprj_4Wpi2s)
+- [VSTS: From Monolith to Cloud Service](https://www.youtube.com/watch?v=9frodP5xLxk)
+- [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU)
+- [Visual Studio Team Services- Hands-on-Labs](https://almvm.azurewebsites.net/labs/vsts/)
+- [DevOps with VSTS](https://alwaysupalwayson.blogspot.com/2017/04/devops-with-vsts.html)
+- [Agile Tour Quebec city 2016 - Your DevOps journey starts with ALM!](https://alwaysupalwayson.blogspot.com/2016/11/agile-tour-quebec-city-2016-your-devops.html)
+- [Agile Tour Québec 2015 - Introduction à DevOps](https://alwaysupalwayson.blogspot.com/2015/11/agile-tour-quebec-2015-introduction.html)
