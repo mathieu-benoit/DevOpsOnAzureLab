@@ -16,9 +16,10 @@ Best practices highlighted:
 - Generate artifacts to be reused in a separate Continuous Delivery (CD) process
 - Automate the communication with your teammates through Slack notifications
 
-You will go through 3 main sections in this lab:
+You will go through 4 main sections in this lab:
 
 - Create the VSTS Build definition and expose the "app" artifact
+- Update the "master" branch policies to validate code by pre-merging and building PR changes
 - Fix the unit test issue by submitting a new branch and pull request
 - Expose the "infra" and "ui-tests" artifacts
 
@@ -63,6 +64,10 @@ TODO - Update screenshot to have "**/*UnitTests/*.csproj"
 
 - In the current and default "Iteration 1" of the VSTS Work feature, you should see a new Bug Work Item.
 - In Slack, you should see 2 notifications: 1 for the Build failed in the #build channel and 1 other for the Work Item created in the #work channel.
+
+## Update the "master" branch policies to validate code by pre-merging and building PR changes
+
+TODO
 
 ## Fix the unit test issue by submitting a new branch and pull request
 

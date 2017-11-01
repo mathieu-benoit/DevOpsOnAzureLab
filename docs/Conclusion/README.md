@@ -6,9 +6,9 @@ Previous lab: [Lab 5 - Decoupling with Microservices](../Lab%205%20-%20Decouplin
 
 ## Further concepts
 
--add CI on pull request
--add database management
--add security tests
--add load tests
--add chaos monkey tests - resiliency
--add twitter and email feedback from user - automation for integration in backlog
+- CI on pull request / feature branch
+- Database management
+- Security tests
+- Load tests
+- Chaos monkey tests - resiliency
+- Twitter and email feedback from user - automation for integration in backlog
