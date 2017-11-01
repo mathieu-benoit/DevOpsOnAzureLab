@@ -12,6 +12,8 @@ Best practices highlighted:
 
 - Integrate unit tests during the CI process
 - Trigger CI at each commit into master branch
+- Validate code on feature-branch by pre-merging and building PR changes
+- Do code review through PR (comments, rejection, etc.)
 - Create a work item on build failure as bug in the backlog
 - Generate artifacts to be reused in a separate Continuous Delivery (CD) process
 - Automate the communication with your teammates through Slack notifications
@@ -25,7 +27,7 @@ You will go through 4 main sections in this lab:
 
 ## Create the VSTS Build definition and expose the "app" artifact
 
-1. Go to your VSTS account https://<yourvstsaccount.visualstudio.com
+1. Go to your VSTS account `https://<yourvstsaccount.visualstudio.com`
 2. Navigate to the "Build and Release" tab and click on the "New definition" button:
 
 ![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
@@ -73,9 +75,7 @@ TODO
 
 11. Go to the VSTS "Code" main tab to create a new branch based on the master branch. Click on "New branch" action and name it as `fix-unit-test` and then click on the "Create branch" button:
 
-TODO - Review the name of the branch with good practices? mathieu-benoit/fix-unit-test
-
-TODO - Create branch from WorkItem instead to demonstrate the integration?
+TODO - Create branch from WorkItem instead to demonstrate the integration instead?
 
 ![VSTSCode  - Create New Branch](./imgs/VSTSCode-CreateNewBranch.PNG)
 
@@ -111,6 +111,6 @@ TODO - Import Task Group instead of create manually the steps below
 
 ![VSTSBuild - Artifacts](./imgs/VSTSBuild-Artifacts.PNG)
 
-You are now all set for this lab. Let's see how the 3 artifacts of the CI will be used with the next lab.
+You are now all set for this lab. Let's see how the 3 artifacts of these CI will be used with the next lab during the CD process.
 
 Next lab: [Lab 3 - Continuous Delivery](../Lab%203%20-%20Continuous%20Delivery/README.md)

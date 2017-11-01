@@ -20,6 +20,7 @@ You will go through 3 main sections in this lab:
 
 ## Import existing Git repository
 
+0. It's better to open a new web browser instance in Incognito, Private or InPrivate mode to avoid any signed-in session conflict.
 1. Go to your VSTS account `https://<yourvstsaccount>.visualstudio.com` and open your existing empty project (default: "MyFirstProject", otherwise create a new one).
 2. Navigate to the "Code" tab
 3. Use the [Import into an existing empty repository](https://docs.microsoft.com/en-us/vsts/git/import-git-repository#import-into-an-existing-empty-repo) feature by hitting the "Import" button like illustrated on the image below.

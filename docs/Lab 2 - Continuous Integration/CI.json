@@ -1,0 +1,285 @@
+{
+  "options": [
+    {
+      "enabled": true,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "1575432",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": {}
+    }
+  ],
+  "variables": {
+    "BuildConfiguration": {
+      "value": "release",
+      "allowOverride": true
+    },
+    "BuildPlatform": {
+      "value": "any cpu",
+      "allowOverride": true
+    },
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "https://atq2017devops1.visualstudio.com/c979e2cb-90ad-4eef-8543-0d79b4704c79/_apis/build/Definitions/2"
+    },
+    "web": {
+      "href": "https://atq2017devops1.visualstudio.com/_permalink/_build/index?collectionId=51799ff3-9f50-4a7b-9f63-9f71893a16e7&projectId=c979e2cb-90ad-4eef-8543-0d79b4704c79&definitionId=2"
+    },
+    "editor": {
+      "href": "https://atq2017devops1.visualstudio.com/_permalink/_build/definitionEditor?collectionId=51799ff3-9f50-4a7b-9f63-9f71893a16e7&projectId=c979e2cb-90ad-4eef-8543-0d79b4704c79&definitionId=2"
+    }
+  },
+  "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+  "jobAuthorizationScope": 1,
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "phases": [
+      {
+        "dependencies": [],
+        "steps": [
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Restore",
+            "timeoutInMinutes": 0,
+            "refName": "DotNetCoreCLI1",
+            "task": {
+              "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "command": "restore",
+              "publishWebProjects": "true",
+              "projects": "$(Parameters.RestoreBuildProjects)",
+              "arguments": "",
+              "zipAfterPublish": "true"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Build",
+            "timeoutInMinutes": 0,
+            "refName": "DotNetCoreCLI2",
+            "task": {
+              "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "command": "build",
+              "publishWebProjects": "true",
+              "projects": "$(Parameters.RestoreBuildProjects)",
+              "arguments": "--configuration $(BuildConfiguration)",
+              "zipAfterPublish": "true"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Test",
+            "timeoutInMinutes": 0,
+            "refName": "DotNetCoreCLI3",
+            "task": {
+              "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "command": "test",
+              "publishWebProjects": "true",
+              "projects": "$(Parameters.TestProjects)",
+              "arguments": "--configuration $(BuildConfiguration)",
+              "zipAfterPublish": "true"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Package",
+            "timeoutInMinutes": 0,
+            "refName": "DotNetCoreCLI4",
+            "task": {
+              "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "command": "publish",
+              "publishWebProjects": "True",
+              "projects": "",
+              "arguments": "--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)",
+              "zipAfterPublish": "True"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Expose \"app\" Artifact",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "ClonedPublishBuildArtifacts54",
+            "task": {
+              "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "PathtoPublish": "$(build.artifactstagingdirectory)",
+              "ArtifactName": "app",
+              "ArtifactType": "Container",
+              "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+              "Parallel": "false",
+              "ParallelCount": "8"
+            }
+          }
+        ],
+        "variables": {},
+        "name": "Phase 1",
+        "target": {
+          "demands": [],
+          "executionOptions": {
+            "type": 0
+          },
+          "type": 1
+        },
+        "jobAuthorizationScope": "projectCollection",
+        "jobCancelTimeoutInMinutes": 1
+      }
+    ],
+    "type": 1
+  },
+  "repository": {
+    "properties": {
+      "cleanOptions": "0",
+      "labelSources": "0",
+      "labelSourcesFormat": "$(build.buildNumber)",
+      "reportBuildStatus": "true",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "checkoutNestedSubmodules": "false",
+      "fetchDepth": "0"
+    },
+    "id": "b7171c40-7d6e-404a-9e50-71555309220c",
+    "type": "TfsGit",
+    "name": "MyFirstProject",
+    "url": "https://atq2017devops1.visualstudio.com/_git/MyFirstProject",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "processParameters": {
+    "inputs": [
+      {
+        "options": {},
+        "properties": {},
+        "name": "RestoreBuildProjects",
+        "label": "Project(s) to restore and build",
+        "defaultValue": "src/MainWebApplication/MainWebApplication/MainWebApplication.csproj\nsrc/MainWebApplication/MainWebApplicationUnitTests/MainWebApplicationUnitTests.csproj",
+        "type": "multiline",
+        "helpMarkDown": "Relative path of the .csproj file(s) from repo root. Wildcards can be used. For example, **/*.csproj for all .csproj files in all the subfolders.",
+        "visibleRule": "",
+        "groupName": ""
+      },
+      {
+        "options": {},
+        "properties": {},
+        "name": "TestProjects",
+        "label": "Project(s) to test",
+        "defaultValue": "**/*UnitTests/*.csproj",
+        "type": "multiline",
+        "helpMarkDown": "Relative path of the .csproj file(s) from repo root. Wildcards can be used. For example, **/*.csproj for all .csproj files in all the subfolders.",
+        "visibleRule": "",
+        "groupName": ""
+      }
+    ]
+  },
+  "quality": 1,
+  "authoredBy": {
+    "id": "d099711a-6f88-6e33-9448-9cc34ab5a282",
+    "displayName": "atq2017-devops-1",
+    "uniqueName": "atq2017-devops-1@tinoza.org",
+    "url": "https://app.vssps.visualstudio.com/Ae02d038a-e28d-4dd4-847b-8c901463b53e/_apis/Identities/d099711a-6f88-6e33-9448-9cc34ab5a282",
+    "imageUrl": "https://atq2017devops1.visualstudio.com/_api/_common/identityImage?id=d099711a-6f88-6e33-9448-9cc34ab5a282"
+  },
+  "drafts": [],
+  "queue": {
+    "id": 4,
+    "name": "Hosted VS2017",
+    "pool": {
+      "id": 4,
+      "name": "Hosted VS2017",
+      "isHosted": true
+    }
+  },
+  "id": 2,
+  "name": "CI",
+  "url": "https://atq2017devops1.visualstudio.com/c979e2cb-90ad-4eef-8543-0d79b4704c79/_apis/build/Definitions/2",
+  "uri": "vstfs:///Build/Definition/2",
+  "path": "\\",
+  "type": 2,
+  "queueStatus": 0,
+  "revision": 1,
+  "createdDate": "2017-11-01T23:11:37.900Z",
+  "project": {
+    "id": "c979e2cb-90ad-4eef-8543-0d79b4704c79",
+    "name": "MyFirstProject",
+    "url": "https://atq2017devops1.visualstudio.com/_apis/projects/c979e2cb-90ad-4eef-8543-0d79b4704c79",
+    "state": "wellFormed",
+    "revision": 10,
+    "visibility": 0
+  }
+}

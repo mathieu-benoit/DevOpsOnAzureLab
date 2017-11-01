@@ -6,7 +6,6 @@ Previous lab: [Lab 5 - Decoupling with Microservices](../Lab%205%20-%20Decouplin
 
 ## Further concepts
 
-- CI on pull request / feature branch
 - Database management
 - Security tests
 - Load tests
