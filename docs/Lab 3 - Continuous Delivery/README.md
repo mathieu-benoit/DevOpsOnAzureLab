@@ -26,14 +26,11 @@ You will go through 4 main sections in this lab:
 
 ## Create the Release definition to deploy the "app" artifact in DEV environment
 
-TODO - Merge app, infra, ui test steps with an import of Tasks Group
-
 - Choose an Azure App Service Deploy
   - Version 2.*
   - Environment: DEV 
   - Azure subscription: Azure Paas - Connection
   - App service name: $(DevAppServiceName)
-  - Version: 2.*
   - Package or Folder: $(System.DefaultWorkingDirectory)/CI/app/MainWebApplication.zip
 - Setup the variable DevAppServiceName
 - Setup the artifact "CI" and enable the "Continuous deployment trigger" on the "master" branch
