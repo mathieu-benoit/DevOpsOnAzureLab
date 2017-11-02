@@ -105,7 +105,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSBuild - Tasks Group Imported](./imgs/VSTSBuild-TasksGroupImported.PNG)
 
-18. Go to the "Builds" sub-tab of the "Build and Release" tab, open your "CI" Build definition and add an instance of the Tasks Group just imported. Once added, let's rename this step as `Expose "infra" and "ui-tests Artifacts`:
+18. Go to the "Builds" sub-tab of the "Build and Release" tab, open your "CI" Build definition and add an instance of the Tasks Group just imported. Once added, let's rename this step as `Expose "infra" and "ui-tests" Artifacts`:
 
 ![VSTSBuild - Add Tasks Group](./imgs/VSTSBuild-AddTasksGroup.PNG)
 
