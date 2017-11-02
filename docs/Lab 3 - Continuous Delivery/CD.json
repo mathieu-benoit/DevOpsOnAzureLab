@@ -1,0 +1,1175 @@
+{
+  "source": 2,
+  "id": 3,
+  "revision": 15,
+  "name": "CD - Copy - Copy",
+  "description": null,
+  "createdBy": {
+    "id": "d099711a-6f88-6e33-9448-9cc34ab5a282",
+    "displayName": "atq2017-devops-1",
+    "uniqueName": "atq2017-devops-1",
+    "url": "https://app.vssps.visualstudio.com/Ae02d038a-e28d-4dd4-847b-8c901463b53e/_apis/Identities/d099711a-6f88-6e33-9448-9cc34ab5a282",
+    "imageUrl": "https://atq2017devops1.visualstudio.com/_api/_common/identityImage?id=d099711a-6f88-6e33-9448-9cc34ab5a282"
+  },
+  "createdOn": "2017-11-02T20:24:50.067Z",
+  "modifiedBy": {
+    "id": "d099711a-6f88-6e33-9448-9cc34ab5a282",
+    "displayName": "atq2017-devops-1",
+    "uniqueName": "atq2017-devops-1",
+    "url": "https://app.vssps.visualstudio.com/Ae02d038a-e28d-4dd4-847b-8c901463b53e/_apis/Identities/d099711a-6f88-6e33-9448-9cc34ab5a282",
+    "imageUrl": "https://atq2017devops1.visualstudio.com/_api/_common/identityImage?id=d099711a-6f88-6e33-9448-9cc34ab5a282"
+  },
+  "modifiedOn": "2017-11-02T21:30:06.383Z",
+  "isDeleted": false,
+  "path": "\\",
+  "variables": {
+    "AppServiceName": {
+      "value": "atq2017devops1"
+    },
+    "Location": {
+      "value": "East US"
+    },
+    "ParentWebAppAlreadyExists": {
+      "value": ""
+    },
+    "SlotToSwap": {
+      "value": "staging"
+    }
+  },
+  "variableGroups": [],
+  "environments": [
+    {
+      "id": 14,
+      "name": "DEV",
+      "rank": 1,
+      "owner": {
+        "id": "d099711a-6f88-6e33-9448-9cc34ab5a282",
+        "displayName": "atq2017-devops-1",
+        "uniqueName": "atq2017-devops-1",
+        "url": "https://app.vssps.visualstudio.com/Ae02d038a-e28d-4dd4-847b-8c901463b53e/_apis/Identities/d099711a-6f88-6e33-9448-9cc34ab5a282",
+        "imageUrl": "https://atq2017devops1.visualstudio.com/_api/_common/identityImage?id=d099711a-6f88-6e33-9448-9cc34ab5a282"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 50
+          }
+        ]
+      },
+      "deployStep": {
+        "tasks": [],
+        "id": 59
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 60
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": 4,
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": 1,
+          "name": "Run on agent",
+          "workflowTasks": [
+            {
+              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "version": "2.*",
+              "name": "Provision infra",
+              "refName": "AzureResourceGroupDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "action": "Create Or Update Resource Group",
+                "resourceGroupName": "$(Parameters.WebAppName)",
+                "location": "$(Location)",
+                "templateLocation": "Linked artifact",
+                "csmFileLink": "",
+                "csmParametersFileLink": "",
+                "csmFile": "$(System.DefaultWorkingDirectory)/CI/infra/template.json",
+                "csmParametersFile": "",
+                "overrideParameters": "-hostingPlanName $(Parameters.WebAppName)",
+                "deploymentMode": "Incremental",
+                "enableDeploymentPrerequisites": "None",
+                "deploymentGroupEndpoint": "",
+                "project": "",
+                "deploymentGroupName": "",
+                "copyAzureVMTags": "true",
+                "outputVariable": ""
+              }
+            },
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "2.*",
+              "name": "Deploy app",
+              "refName": "AzureRmWebAppDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": null,
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "WebAppName": "$(Parameters.WebAppName)",
+                "DeployToSlotFlag": "false",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/CI/app/MainWebApplication.zip",
+                "WebAppUri": "",
+                "UseWebDeploy": "false",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "TakeAppOfflineFlag": "true"
+              }
+            },
+            {
+              "taskId": "2a1711d0-b4a4-11e6-a3c2-edf36ba3fddc",
+              "version": "1.*",
+              "name": "CheckUrl",
+              "refName": "checkurl1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "url": "https://$(Parameters.WebAppName).azurewebsites.net"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": 1,
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {
+        "inputs": [
+          {
+            "options": {},
+            "properties": {},
+            "name": "ConnectedServiceName",
+            "label": "Azure subscription",
+            "defaultValue": "6b283670-fc75-4fdb-8840-58e7e7f85c2e",
+            "required": true,
+            "type": "connectedService:AzureRM",
+            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
+            "visibleRule": "",
+            "groupName": ""
+          },
+          {
+            "options": {},
+            "properties": {
+              "EditableOptions": "True"
+            },
+            "name": "WebAppName",
+            "label": "App service name",
+            "defaultValue": "$(AppServiceName)-dev",
+            "required": true,
+            "type": "pickList",
+            "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
+            "visibleRule": "",
+            "groupName": ""
+          }
+        ],
+        "dataSourceBindings": [
+          {
+            "dataSourceName": "AzureRMWebAppNames",
+            "parameters": {},
+            "endpointId": "$(ConnectedServiceName)",
+            "target": "WebAppName"
+          },
+          {
+            "dataSourceName": "AzureAppKind",
+            "parameters": {
+              "WebAppName": "$(WebAppName)"
+            },
+            "endpointId": "$(ConnectedServiceName)",
+            "target": "WebAppKind",
+            "resultTemplate": "{\"Value\":\"{{{ #stringReplace ',' '' kind }}}\",\"DisplayValue\":\"{{{ #stringReplace ',' '' kind }}}\"}"
+          }
+        ]
+      },
+      "properties": {}
+    },
+    {
+      "id": 15,
+      "name": "QA-staging",
+      "rank": 2,
+      "owner": {
+        "id": "d099711a-6f88-6e33-9448-9cc34ab5a282",
+        "displayName": "atq2017-devops-1",
+        "uniqueName": "atq2017-devops-1",
+        "url": "https://app.vssps.visualstudio.com/Ae02d038a-e28d-4dd4-847b-8c901463b53e/_apis/Identities/d099711a-6f88-6e33-9448-9cc34ab5a282",
+        "imageUrl": "https://atq2017devops1.visualstudio.com/_api/_common/identityImage?id=d099711a-6f88-6e33-9448-9cc34ab5a282"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 51
+          }
+        ]
+      },
+      "deployStep": {
+        "tasks": [],
+        "id": 58
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 61
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": 4,
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": 1,
+          "name": "Agent phase",
+          "workflowTasks": [
+            {
+              "taskId": "72a1931b-effb-4d2e-8fd8-f8472a07cb62",
+              "version": "2.*",
+              "name": "Check if parent web app already exists",
+              "refName": "AzurePowerShell2",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
+                "ConnectedServiceName": "",
+                "ConnectedServiceNameARM": "$(Parameters.ConnectedServiceName)",
+                "ScriptType": "FilePath",
+                "ScriptPath": "$(System.DefaultWorkingDirectory)/CI/infra/CheckIfParentWebAppAlreadyExists.ps1",
+                "Inline": "# You can write your azure powershell scripts inline here. \n# You can also pass predefined and custom variables to this script using arguments",
+                "ScriptArguments": "-WebAppName $(Parameters.WebAppName)",
+                "TargetAzurePs": "LatestVersion",
+                "CustomTargetAzurePs": ""
+              }
+            },
+            {
+              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "version": "2.*",
+              "name": "Provision parent web app infra (if needed)",
+              "refName": "AzureResourceGroupDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "and(succeeded(), eq(variables['ParentWebAppAlreadyExists'], 'false'))",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "action": "Create Or Update Resource Group",
+                "resourceGroupName": "$(Parameters.WebAppName)",
+                "location": "$(Location)",
+                "templateLocation": "Linked artifact",
+                "csmFileLink": "",
+                "csmParametersFileLink": "",
+                "csmFile": "$(System.DefaultWorkingDirectory)/CI/infra/template.json",
+                "csmParametersFile": "",
+                "overrideParameters": "-hostingPlanName $(Parameters.WebAppName)",
+                "deploymentMode": "Incremental",
+                "enableDeploymentPrerequisites": "None",
+                "deploymentGroupEndpoint": "",
+                "project": "",
+                "deploymentGroupName": "",
+                "copyAzureVMTags": "true",
+                "outputVariable": ""
+              }
+            },
+            {
+              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "version": "2.*",
+              "name": "Provision slot infra",
+              "refName": "ClonedAzureResourceGroupDeployment11",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "action": "Create Or Update Resource Group",
+                "resourceGroupName": "$(Parameters.WebAppName)",
+                "location": "$(Location)",
+                "templateLocation": "Linked artifact",
+                "csmFileLink": "",
+                "csmParametersFileLink": "",
+                "csmFile": "$(System.DefaultWorkingDirectory)/CI/infra/template-slot.json",
+                "csmParametersFile": "",
+                "overrideParameters": "-webAppName $(Parameters.WebAppName) -slotName $(SlotToSwap)",
+                "deploymentMode": "Incremental",
+                "enableDeploymentPrerequisites": "None",
+                "deploymentGroupEndpoint": "",
+                "project": "",
+                "deploymentGroupName": "",
+                "copyAzureVMTags": "true",
+                "outputVariable": ""
+              }
+            },
+            {
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "2.*",
+              "name": "Deploy app",
+              "refName": "AzureRmWebAppDeployment2",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "WebAppName": "$(Parameters.WebAppName)",
+                "DeployToSlotFlag": "true",
+                "ResourceGroupName": "$(Parameters.WebAppName)",
+                "SlotName": "$(SlotToSwap)",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/CI/app/MainWebApplication.zip",
+                "WebAppUri": "",
+                "UseWebDeploy": "false",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "TakeAppOfflineFlag": "false"
+              }
+            },
+            {
+              "taskId": "2a1711d0-b4a4-11e6-a3c2-edf36ba3fddc",
+              "version": "1.*",
+              "name": "CheckUrl",
+              "refName": "checkurl3",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "url": "https://$(Parameters.WebAppName)-$(SlotToSwap).azurewebsites.net"
+              }
+            },
+            {
+              "taskId": "ef087383-ee5e-42c7-9a53-ab56c98420f9",
+              "version": "2.*",
+              "name": "Run UITests",
+              "refName": "VSTest4",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "testSelector": "testAssemblies",
+                "testAssemblyVer2": "*SeleniumTests.dll",
+                "testPlan": "",
+                "testSuite": "",
+                "testConfiguration": "",
+                "tcmTestRun": "$(test.RunId)",
+                "searchFolder": "$(System.DefaultWorkingDirectory)/CI/ui-tests",
+                "testFiltercriteria": "TestCategory=SeleniumTests",
+                "runOnlyImpactedTests": "False",
+                "runAllTestsAfterXBuilds": "50",
+                "uiTests": "false",
+                "vstestLocationMethod": "version",
+                "vsTestVersion": "latest",
+                "vstestLocation": "",
+                "runSettingsFile": "$(System.DefaultWorkingDirectory)/CI/ui-tests/TestRunParameters.runsettings",
+                "overrideTestrunParameters": "-BaseUrl https://$(Parameters.WebAppName)-$(SlotToSwap).azurewebsites.net -Browser PhantomJS",
+                "pathtoCustomTestAdapters": "",
+                "runInParallel": "False",
+                "runTestsInIsolation": "False",
+                "codeCoverageEnabled": "False",
+                "otherConsoleOptions": "",
+                "distributionBatchType": "basedOnTestCases",
+                "batchingBasedOnAgentsOption": "autoBatchSize",
+                "customBatchSizeValue": "10",
+                "batchingBasedOnExecutionTimeOption": "autoBatchSize",
+                "customRunTimePerBatchValue": "60",
+                "dontDistribute": "False",
+                "testRunTitle": "Selenium Tests",
+                "platform": "$(ReleasePlatform)",
+                "configuration": "$(ReleaseConfiguration)",
+                "publishRunAttachments": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "DEV",
+          "conditionType": 2,
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {
+        "inputs": [
+          {
+            "options": {},
+            "properties": {},
+            "name": "ConnectedServiceName",
+            "label": "Azure subscription",
+            "defaultValue": "6b283670-fc75-4fdb-8840-58e7e7f85c2e",
+            "required": true,
+            "type": "connectedService:AzureRM",
+            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
+            "visibleRule": "",
+            "groupName": ""
+          },
+          {
+            "options": {},
+            "properties": {
+              "EditableOptions": "True"
+            },
+            "name": "WebAppName",
+            "label": "App service name",
+            "defaultValue": "$(AppServiceName)-qa",
+            "required": true,
+            "type": "pickList",
+            "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
+            "visibleRule": "",
+            "groupName": ""
+          }
+        ]
+      },
+      "properties": {}
+    },
+    {
+      "id": 16,
+      "name": "QA",
+      "rank": 3,
+      "owner": {
+        "id": "d099711a-6f88-6e33-9448-9cc34ab5a282",
+        "displayName": "atq2017-devops-1",
+        "uniqueName": "atq2017-devops-1",
+        "url": "https://app.vssps.visualstudio.com/Ae02d038a-e28d-4dd4-847b-8c901463b53e/_apis/Identities/d099711a-6f88-6e33-9448-9cc34ab5a282",
+        "imageUrl": "https://atq2017devops1.visualstudio.com/_api/_common/identityImage?id=d099711a-6f88-6e33-9448-9cc34ab5a282"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 52
+          }
+        ]
+      },
+      "deployStep": {
+        "tasks": [],
+        "id": 57
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 62
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": 4,
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": 1,
+          "name": "Agent phase",
+          "workflowTasks": [
+            {
+              "taskId": "f045e430-8704-11e6-968f-e717e6411619",
+              "version": "0.*",
+              "name": "Swap Slots",
+              "refName": "AzureAppServiceManage2",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "Action": "Swap Slots",
+                "WebAppName": "$(Parameters.WebAppName)",
+                "SpecifySlot": "false",
+                "ResourceGroupName": "$(Parameters.WebAppName)",
+                "SourceSlot": "$(SlotToSwap)",
+                "SwapWithProduction": "true",
+                "TargetSlot": "",
+                "PreserveVnet": "false",
+                "Slot": "",
+                "ExtensionsList": "",
+                "OutputVariable": ""
+              }
+            },
+            {
+              "taskId": "2a1711d0-b4a4-11e6-a3c2-edf36ba3fddc",
+              "version": "1.*",
+              "name": "CheckUrl",
+              "refName": "checkurl3",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "url": "https://$(Parameters.WebAppName).azurewebsites.net"
+              }
+            },
+            {
+              "taskId": "ef087383-ee5e-42c7-9a53-ab56c98420f9",
+              "version": "2.*",
+              "name": "Run UITests",
+              "refName": "VSTest4",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "testSelector": "testAssemblies",
+                "testAssemblyVer2": "*SeleniumTests.dll",
+                "testPlan": "",
+                "testSuite": "",
+                "testConfiguration": "",
+                "tcmTestRun": "$(test.RunId)",
+                "searchFolder": "$(System.DefaultWorkingDirectory)/CI/ui-tests",
+                "testFiltercriteria": "TestCategory=SeleniumTests",
+                "runOnlyImpactedTests": "False",
+                "runAllTestsAfterXBuilds": "50",
+                "uiTests": "false",
+                "vstestLocationMethod": "version",
+                "vsTestVersion": "latest",
+                "vstestLocation": "",
+                "runSettingsFile": "$(System.DefaultWorkingDirectory)/CI/ui-tests/TestRunParameters.runsettings",
+                "overrideTestrunParameters": "-BaseUrl https://$(Parameters.WebAppName).azurewebsites.net -Browser PhantomJS",
+                "pathtoCustomTestAdapters": "",
+                "runInParallel": "False",
+                "runTestsInIsolation": "False",
+                "codeCoverageEnabled": "False",
+                "otherConsoleOptions": "",
+                "distributionBatchType": "basedOnTestCases",
+                "batchingBasedOnAgentsOption": "autoBatchSize",
+                "customBatchSizeValue": "10",
+                "batchingBasedOnExecutionTimeOption": "autoBatchSize",
+                "customRunTimePerBatchValue": "60",
+                "dontDistribute": "False",
+                "testRunTitle": "Selenium Tests",
+                "platform": "$(ReleasePlatform)",
+                "configuration": "$(ReleaseConfiguration)",
+                "publishRunAttachments": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "QA-staging",
+          "conditionType": 2,
+          "value": "4"
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {
+        "inputs": [
+          {
+            "options": {},
+            "properties": {},
+            "name": "ConnectedServiceName",
+            "label": "Azure subscription",
+            "defaultValue": "6b283670-fc75-4fdb-8840-58e7e7f85c2e",
+            "required": true,
+            "type": "connectedService:AzureRM",
+            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
+            "visibleRule": "",
+            "groupName": ""
+          },
+          {
+            "options": {},
+            "properties": {
+              "EditableOptions": "True"
+            },
+            "name": "WebAppName",
+            "label": "App service name",
+            "defaultValue": "$(AppServiceName)-qa",
+            "required": true,
+            "type": "pickList",
+            "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
+            "visibleRule": "",
+            "groupName": ""
+          }
+        ]
+      },
+      "properties": {}
+    },
+    {
+      "id": 18,
+      "name": "Delete QA-staging and QA",
+      "rank": 4,
+      "owner": {
+        "id": "d099711a-6f88-6e33-9448-9cc34ab5a282",
+        "displayName": "atq2017-devops-1",
+        "uniqueName": "atq2017-devops-1",
+        "url": "https://app.vssps.visualstudio.com/Ae02d038a-e28d-4dd4-847b-8c901463b53e/_apis/Identities/d099711a-6f88-6e33-9448-9cc34ab5a282",
+        "imageUrl": "https://atq2017devops1.visualstudio.com/_api/_common/identityImage?id=d099711a-6f88-6e33-9448-9cc34ab5a282"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 54
+          }
+        ]
+      },
+      "deployStep": {
+        "tasks": [],
+        "id": 55
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 64
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": 4,
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": 1,
+          "name": "Agent phase",
+          "workflowTasks": [
+            {
+              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "version": "2.*",
+              "name": "Delete Resource Group",
+              "refName": "AzureResourceGroupDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "action": "DeleteRG",
+                "resourceGroupName": "$(Parameters.WebAppName)",
+                "location": "",
+                "templateLocation": "Linked artifact",
+                "csmFileLink": "",
+                "csmParametersFileLink": "",
+                "csmFile": "",
+                "csmParametersFile": "",
+                "overrideParameters": "",
+                "deploymentMode": "Incremental",
+                "enableDeploymentPrerequisites": "None",
+                "deploymentGroupEndpoint": "",
+                "project": "",
+                "deploymentGroupName": "",
+                "copyAzureVMTags": "true",
+                "outputVariable": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true
+      },
+      "demands": [],
+      "conditions": [],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {
+        "inputs": [
+          {
+            "options": {},
+            "properties": {},
+            "name": "ConnectedServiceName",
+            "label": "Azure subscription",
+            "defaultValue": "6b283670-fc75-4fdb-8840-58e7e7f85c2e",
+            "required": true,
+            "type": "connectedService:AzureRM",
+            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
+            "visibleRule": "",
+            "groupName": ""
+          },
+          {
+            "options": {},
+            "properties": {
+              "EditableOptions": "True"
+            },
+            "name": "WebAppName",
+            "label": "App service name",
+            "defaultValue": "$(AppServiceName)-qa",
+            "required": true,
+            "type": "pickList",
+            "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
+            "visibleRule": "",
+            "groupName": ""
+          }
+        ]
+      },
+      "properties": {}
+    },
+    {
+      "id": 20,
+      "name": "Rollback QA",
+      "rank": 5,
+      "owner": {
+        "id": "d099711a-6f88-6e33-9448-9cc34ab5a282",
+        "displayName": "atq2017-devops-1",
+        "uniqueName": "atq2017-devops-1",
+        "url": "https://app.vssps.visualstudio.com/Ae02d038a-e28d-4dd4-847b-8c901463b53e/_apis/Identities/d099711a-6f88-6e33-9448-9cc34ab5a282",
+        "imageUrl": "https://atq2017devops1.visualstudio.com/_api/_common/identityImage?id=d099711a-6f88-6e33-9448-9cc34ab5a282"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 68
+          }
+        ]
+      },
+      "deployStep": {
+        "tasks": [],
+        "id": 69
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 70
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": 4,
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": 1,
+          "name": "Agent phase",
+          "workflowTasks": [
+            {
+              "taskId": "f045e430-8704-11e6-968f-e717e6411619",
+              "version": "0.*",
+              "name": "Swap Slots",
+              "refName": "AzureAppServiceManage2",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "Action": "Swap Slots",
+                "WebAppName": "$(Parameters.WebAppName)",
+                "SpecifySlot": "false",
+                "ResourceGroupName": "$(Parameters.WebAppName)",
+                "SourceSlot": "$(SlotToSwap)",
+                "SwapWithProduction": "true",
+                "TargetSlot": "",
+                "PreserveVnet": "false",
+                "Slot": "",
+                "ExtensionsList": "",
+                "OutputVariable": ""
+              }
+            },
+            {
+              "taskId": "2a1711d0-b4a4-11e6-a3c2-edf36ba3fddc",
+              "version": "1.*",
+              "name": "CheckUrl",
+              "refName": "checkurl3",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "url": "https://$(Parameters.WebAppName).azurewebsites.net"
+              }
+            },
+            {
+              "taskId": "ef087383-ee5e-42c7-9a53-ab56c98420f9",
+              "version": "2.*",
+              "name": "Run UITests",
+              "refName": "VSTest4",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "testSelector": "testAssemblies",
+                "testAssemblyVer2": "*SeleniumTests.dll",
+                "testPlan": "",
+                "testSuite": "",
+                "testConfiguration": "",
+                "tcmTestRun": "$(test.RunId)",
+                "searchFolder": "$(System.DefaultWorkingDirectory)/CI/ui-tests",
+                "testFiltercriteria": "TestCategory=SeleniumTests",
+                "runOnlyImpactedTests": "False",
+                "runAllTestsAfterXBuilds": "50",
+                "uiTests": "false",
+                "vstestLocationMethod": "version",
+                "vsTestVersion": "latest",
+                "vstestLocation": "",
+                "runSettingsFile": "$(System.DefaultWorkingDirectory)/CI/ui-tests/TestRunParameters.runsettings",
+                "overrideTestrunParameters": "-BaseUrl https://$(Parameters.WebAppName).azurewebsites.net -Browser PhantomJS",
+                "pathtoCustomTestAdapters": "",
+                "runInParallel": "False",
+                "runTestsInIsolation": "False",
+                "codeCoverageEnabled": "False",
+                "otherConsoleOptions": "",
+                "distributionBatchType": "basedOnTestCases",
+                "batchingBasedOnAgentsOption": "autoBatchSize",
+                "customBatchSizeValue": "10",
+                "batchingBasedOnExecutionTimeOption": "autoBatchSize",
+                "customRunTimePerBatchValue": "60",
+                "dontDistribute": "False",
+                "testRunTitle": "Selenium Tests",
+                "platform": "$(ReleasePlatform)",
+                "configuration": "$(ReleaseConfiguration)",
+                "publishRunAttachments": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true
+      },
+      "demands": [],
+      "conditions": [],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {
+        "inputs": [
+          {
+            "options": {},
+            "properties": {},
+            "name": "ConnectedServiceName",
+            "label": "Azure subscription",
+            "defaultValue": "6b283670-fc75-4fdb-8840-58e7e7f85c2e",
+            "required": true,
+            "type": "connectedService:AzureRM",
+            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
+            "visibleRule": "",
+            "groupName": ""
+          },
+          {
+            "options": {},
+            "properties": {
+              "EditableOptions": "True"
+            },
+            "name": "WebAppName",
+            "label": "App service name",
+            "defaultValue": "$(AppServiceName)-qa",
+            "required": true,
+            "type": "pickList",
+            "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
+            "visibleRule": "",
+            "groupName": ""
+          }
+        ]
+      },
+      "properties": {}
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "c979e2cb-90ad-4eef-8543-0d79b4704c79:1",
+      "type": "Build",
+      "alias": "CI",
+      "definitionReference": {
+        "artifactSourceDefinitionUrl": {
+          "id": "https://atq2017devops1.visualstudio.com/_permalink/_build/index?collectionId=51799ff3-9f50-4a7b-9f63-9f71893a16e7&projectId=c979e2cb-90ad-4eef-8543-0d79b4704c79&definitionId=1",
+          "name": ""
+        },
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "latestType",
+          "name": "Latest"
+        },
+        "definition": {
+          "id": "1",
+          "name": "MyFirstProject-ASP.NET Core-CI"
+        },
+        "project": {
+          "id": "c979e2cb-90ad-4eef-8543-0d79b4704c79",
+          "name": "MyFirstProject"
+        }
+      },
+      "isPrimary": true
+    }
+  ],
+  "triggers": [
+    {
+      "artifactAlias": "CI",
+      "triggerConditions": [
+        {
+          "sourceBranch": "master",
+          "tags": []
+        }
+      ],
+      "triggerType": 1
+    }
+  ],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "url": "https://atq2017devops1.vsrm.visualstudio.com/c979e2cb-90ad-4eef-8543-0d79b4704c79/_apis/Release/definitions/3",
+  "_links": {
+    "self": {
+      "href": "https://atq2017devops1.vsrm.visualstudio.com/c979e2cb-90ad-4eef-8543-0d79b4704c79/_apis/Release/definitions/3"
+    },
+    "web": {
+      "href": "https://atq2017devops1.visualstudio.com/c979e2cb-90ad-4eef-8543-0d79b4704c79/_release?definitionId=3"
+    }
+  },
+  "tags": [],
+  "properties": {
+    "DefinitionCreationSource": {
+      "$type": "System.String",
+      "$value": "ReleaseImport"
+    }
+  }
+}
