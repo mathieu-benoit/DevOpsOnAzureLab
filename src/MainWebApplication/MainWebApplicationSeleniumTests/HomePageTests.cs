@@ -7,7 +7,7 @@ namespace MainWebApplicationSeleniumTests
     {
         [TestMethod]
         [TestCategory("SeleniumTests")]
-        public void Load_Homepage()
+        public void Load_Homepage_And_Validate_PageTitle()
         {
             //Arrange
             var homepageUrl = BaseUrl;
@@ -17,7 +17,7 @@ namespace MainWebApplicationSeleniumTests
 
             //Assert
             Assert.IsFalse(string.IsNullOrEmpty(Driver.Title));
-            Assert.IsTrue(Driver.Title.Equals("Home Page - DemoApp"));
+            Assert.IsTrue(Driver.Title.Equals("Home Page - MainWebApplication"));
             Assert.IsFalse(string.IsNullOrEmpty(Driver.Url));
             Assert.IsTrue(Driver.Url == homepageUrl);
         }

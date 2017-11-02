@@ -6,7 +6,7 @@ This DevOps on Microsoft Azure lab is dedicated to demonstrate step-by-step how 
 
 TODO - Add img
 
-## Agenda of this lab:
+## Agenda of this lab
 
 1. [Introduction](./docs/Introduction/README.md)
 2. [Lab 1 - Source control](./docs/Lab%201%20-%20Source%20control/README.md)
@@ -41,4 +41,3 @@ Note: It's important to follow the entire lab in the order exposed, each lab add
 - [Visual Studio Team Services- Hands-on-Labs](https://almvm.azurewebsites.net/labs/vsts/)
 - [DevOps with VSTS](https://alwaysupalwayson.blogspot.com/2017/04/devops-with-vsts.html)
 - [Agile Tour Quebec city 2016 - Your DevOps journey starts with ALM!](https://alwaysupalwayson.blogspot.com/2016/11/agile-tour-quebec-city-2016-your-devops.html)
-- [Agile Tour Québec 2015 - Introduction à DevOps](https://alwaysupalwayson.blogspot.com/2015/11/agile-tour-quebec-2015-introduction.html)
