@@ -8,6 +8,5 @@ Previous lab: [Lab 5 - Decoupling with Microservices](../Lab%205%20-%20Decouplin
 
 - Database management
 - Security tests
-- Load tests
 - Chaos monkey tests - resiliency
 - Twitter and email feedback from user - automation for integration in backlog

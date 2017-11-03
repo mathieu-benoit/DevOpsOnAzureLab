@@ -2,7 +2,7 @@
   "source": 2,
   "id": 3,
   "revision": 15,
-  "name": "CD - Copy - Copy",
+  "name": "CD",
   "description": null,
   "createdBy": {
     "id": "d099711a-6f88-6e33-9448-9cc34ab5a282",
@@ -229,23 +229,6 @@
             "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
             "visibleRule": "",
             "groupName": ""
-          }
-        ],
-        "dataSourceBindings": [
-          {
-            "dataSourceName": "AzureRMWebAppNames",
-            "parameters": {},
-            "endpointId": "$(ConnectedServiceName)",
-            "target": "WebAppName"
-          },
-          {
-            "dataSourceName": "AzureAppKind",
-            "parameters": {
-              "WebAppName": "$(WebAppName)"
-            },
-            "endpointId": "$(ConnectedServiceName)",
-            "target": "WebAppKind",
-            "resultTemplate": "{\"Value\":\"{{{ #stringReplace ',' '' kind }}}\",\"DisplayValue\":\"{{{ #stringReplace ',' '' kind }}}\"}"
           }
         ]
       },

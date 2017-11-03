@@ -11,6 +11,10 @@ https://almvm.azurewebsites.net/labs/vsts/monitor/
 -404?
 -403?
 
+Create work item from Application Insights
+
++ VSTS Dashboard?
+
 + Setup PowerBI? https://almvm.azurewebsites.net/labs/vsts/powerbi/
 
 Next lab: [Lab 5 - Decoupling with Microservices](../Lab%205%20-%20Decoupling%20with%20Microservices/README.md)

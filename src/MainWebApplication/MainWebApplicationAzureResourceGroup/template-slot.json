@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "webAppName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slotName": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "apiVersion": "2015-08-01",
+      "name": "[concat(parameters('webAppName'), '/', parameters('slotName'))]",
+      "type": "Microsoft.Web/sites/slots",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [],
+      "properties": {
+        "name": "[concat(parameters('webAppName'), '(', parameters('slotName'), ')')]",
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('webAppName'))]"
+      },
+      "tags": {
+        "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('webAppName'))]": "Resource"
+      }
+    }
+  ]
+}

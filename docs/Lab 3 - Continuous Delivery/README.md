@@ -11,10 +11,10 @@ The goal of this lab is to ...
 Best practices highlighted:
 
 - Use a dedicated version of the CI's artifacts (latest by default)
-- Use Azure ARM Templates as Infrastructue-as-code
+- Use Azure ARM Templates as Infrastructue-as-code exposed by the "Ops" team
 - Store settings on the server - defined in the ARM Templates
 - Run UITests
-- Auto-trigger the CD when the CI is completed
+- Auto-trigger the CD when the associated CI is completed
 - Automate the communication with your teammates through Slack notifications
 
 You will go through 4 main sections in this lab:
@@ -22,53 +22,47 @@ You will go through 4 main sections in this lab:
 - Create a Release definition
 - Deploy the infrastructure and the app
 - Run the UITests
-- Commit a fix in the UITests to trigger the pipeline: CI --> CD
 
 ## Create the Release definition to deploy the "app" artifact in DEV environment
 
-- Choose an Azure App Service Deploy
-  - Version 2.*
-  - Environment: DEV 
-  - Azure subscription: Azure Paas - Connection
-  - App service name: $(DevAppServiceName)
-  - Package or Folder: $(System.DefaultWorkingDirectory)/CI/app/MainWebApplication.zip
-- Setup the variable DevAppServiceName
-- Setup the artifact "CI" and enable the "Continuous deployment trigger" on the "master" branch
-- Run manually the Release
---> It should failed, because... we don't have any infrastructure in place yet...
+1. Go to your VSTS account `https://<yourvstsaccount.visualstudio.com` and open your VSTS project for this lab
+2. Navigate to the "Release" sub-tab of the "Build and Release" tab and click on the "Import" button on the top right hand corner to import the file below. Copy/paste this path into the "File name" field and then click on "Open" and finally "Import":
 
-## Deploy the "infra" artifact
+`
+https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/Lab%203%20-%20Continuous%20Delivery/CD.json
+`
 
-- Choose an Azure Resource Group Deployment
-  - Azure subscription: Azure Paas - Connection
-  - ResourceGroup: $(DevResourceGroup)
-  - Location: $(Location)
-  - Template: $(System.DefaultWorkingDirectory)/CI/infra/template.json
-- Setup the variable ResourceGroup, Location
+![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
 
-## Run the "ui-tests"
+3. After the import, rename the Release definition as `CD` and go to the "Tasks" tab of this Release definition and apply the actions below for each Environment: `DEV`, `QA-staging`, `QA`, `Delete QA-staging and QA` and `Rollback QA`:
 
-## Fix the "ui-tests" issue and trigger the entire pipeline from a commit
+![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
 
-## Blue/Green deployment
+- Set the "Agent queue" of the "Run on agent" step to `Hosted VS2017`
+- Set the "Azure subscription" of the first step "Deployment process" to `Azure Paas - Connection`
 
-TODO
+4. Go to the "Pipeline" tab of this Release definition and add our "CI" Build as artifact:
 
-## Rollback
+![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
 
-TODO
+5. On this artifact let's enable the "Continuous deployment trigger":
 
-## Separate environments QA versus PROD
+![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
 
-TODO
+6. Go to the "Variables" of this Release definition and change the value of the `AppServiceName` variable to your correct number `atq2017devopsXX`
 
-## Cleanup DEV
+![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
 
-- Create a new Environment named "Cleanup"
-- Manual only
-- Choose an Azure Resource Group Deployment
-  - Azure subscription: Azure Paas - Connection
-  - Action: Delete resource group
-  - ResourceGroup: $(DevResourceGroup)
+7. Let's trigger a Release now we are ready ...
 
-Next lab: [Lab 4 - Monitoring](../Lab%204%20-%20Monitoring/README.md)
+## Let's customize a bit this pipeline
+
+Manual approval
+
+Rollback if deployed link
+
+Production link with QA duplication
+
+## Browse the Azure resources
+
+Next lab: [Lab 4 - Monitor and Learn](../Lab%204%20-%20Monitor%20and%20Learn/README.md)

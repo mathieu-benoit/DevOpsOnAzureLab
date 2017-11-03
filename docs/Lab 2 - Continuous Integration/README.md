@@ -29,7 +29,7 @@ You will go through 4 main sections in this lab:
 ## Create the VSTS Build definition and expose the "app" artifact
 
 1. Go to your VSTS account `https://<yourvstsaccount.visualstudio.com` and open your VSTS project for this lab
-2. Navigate to the "Build and Release" tab and click on the "Import" button on the top right hand corner to import the file below. Copy/paste this path into the "File name" field and then click on "Open" and finally "Import":
+2. Navigate to the "Build" sub-tab of the "Build and Release" tab and click on the "Import" button on the top right hand corner to import the file below. Copy/paste this path into the "File name" field and then click on "Open" and finally "Import":
 
 `
 https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/Lab%202%20-%20Continuous%20Integration/CI-BuildDefinition.json
