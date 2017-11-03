@@ -53,9 +53,9 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSRelease - Update Variables](./imgs/VSTSRelease-UpdateVariables.PNG)
 
-7. "Save" your changes and let's trigger a "Release" now we are ready ...
+7. "Save" your changes and let's manually trigger a "Release" now we are ready:
 
-![VSTSRelease - Update Variables](./imgs/VSTSRelease-UpdateVariables.PNG)
+![VSTSRelease - Manually Trigger Release](./imgs/VSTSRelease-ManuallyTriggerRelease.PNG)
 
 8. Once successfuly deployed, you should see this summary for this Release:
 
