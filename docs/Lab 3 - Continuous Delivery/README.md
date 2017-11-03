@@ -32,37 +32,49 @@ You will go through 4 main sections in this lab:
 https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/Lab%203%20-%20Continuous%20Delivery/CD.json
 `
 
-![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
+![VSTSRelease - Import Definition](./imgs/VSTSRelease-ImportDefinition.PNG)
 
 3. After the import, rename the Release definition as `CD` and go to the "Tasks" tab of this Release definition and apply the actions below for each Environment: `DEV`, `QA-staging`, `QA`, `Delete QA-staging and QA` and `Rollback QA`:
 
-![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
+![VSTSRelease - Update Definition Imported](./imgs/VSTSRelease-UpdateDefinitionImported.PNG)
 
 - Set the "Agent queue" of the "Run on agent" step to `Hosted VS2017`
 - Set the "Azure subscription" of the first step "Deployment process" to `Azure Paas - Connection`
 
 4. Go to the "Pipeline" tab of this Release definition and add our "CI" Build as artifact:
 
-![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
+![VSTSRelease - Add CI Artifact](./imgs/VSTSRelease-AddCIArtifact.PNG)
 
 5. On this artifact let's enable the "Continuous deployment trigger":
 
-![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
+![VSTSRelease - Add CI Trigger](./imgs/VSTSRelease-AddCITrigger.PNG)
 
-6. Go to the "Variables" of this Release definition and change the value of the `AppServiceName` variable to your correct number `atq2017devopsXX`
+6. Go to the "Variables" tab of this Release definition and change the value of the `AppServiceName` variable to your correct and unique username, for example: `atq2017devopsXX`. This name should be unique otherwise it will failed while deploying the Azure Web App.
 
-![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
+![VSTSRelease - Update Variables](./imgs/VSTSRelease-UpdateVariables.PNG)
 
-7. Let's trigger a Release now we are ready ...
+7. "Save" your changes and let's trigger a "Release" now we are ready ...
 
-## Let's customize a bit this pipeline
+![VSTSRelease - Update Variables](./imgs/VSTSRelease-UpdateVariables.PNG)
 
-Manual approval
+8. Once successfuly deployed, you should see this summary for this Release:
 
-Rollback if deployed link
+TODO: update this img below with the work items, etc.
 
-Production link with QA duplication
+![VSTSRelease - Succeeded Summary](./imgs/VSTSRelease-SucceededSummary.PNG)
+
+## (Optional) Let's customize a bit this pipeline
+
+Configure Manual approval
+
+Configure Rollback if deployed link
+
+Configure Production link with QA duplication
+
+Add RG Lock + Policies
 
 ## Browse the Azure resources
+
+Go to the Azure portal...
 
 Next lab: [Lab 4 - Monitor and Learn](../Lab%204%20-%20Monitor%20and%20Learn/README.md)

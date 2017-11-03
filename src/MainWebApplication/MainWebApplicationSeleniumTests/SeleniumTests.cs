@@ -11,7 +11,7 @@ namespace MainWebApplicationSeleniumTests
     public class SeleniumTests
     {
         public TestContext TestContext { get; set; }
-        protected string BaseUrl = "http://localhost:63643/";
+        protected string BaseUrl = "https://atq2017devopsx-qa-staging.azurewebsites.net/";
         protected RemoteWebDriver Driver;
 
         [TestInitialize()]

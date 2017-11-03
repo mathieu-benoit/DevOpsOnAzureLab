@@ -4,7 +4,7 @@ This DevOps on Microsoft Azure lab is dedicated to demonstrate step-by-step how 
 
 ## Overview
 
-TODO - Add img
+![Lab Workflow](./docs/Introduction/imgs/LabWorkflow.PNG)
 
 ## Agenda of this lab
 
