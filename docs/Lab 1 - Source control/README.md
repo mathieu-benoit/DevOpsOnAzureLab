@@ -29,6 +29,8 @@ You will go through 3 main sections in this lab:
 
 4. Set the fields **Source type** to `Git` and **Clone URL** to `https://github.com/mathieu-benoit/DevOpsOnAzureLab.git` and click on **Import**.
 
+Note: this GitHub repository you are importing contains a sample ASP.NET Core web app with unit tests and selenium tests which will be used during the next labs. Stay tuned!
+
 ## Setup branch policies
 
 5. Once the repository imported with the previous step, go to the **Code** tab and navigate to the **Branch policies** feature of the `master` branch like illustrated below:
