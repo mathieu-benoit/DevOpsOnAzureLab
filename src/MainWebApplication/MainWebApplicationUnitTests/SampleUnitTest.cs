@@ -11,15 +11,10 @@ namespace MainWebApplicationUnitTests
             var expectedResult = 5;
 
             //Act
-            var result = Add(2, 3);
+            var result = 2 + 3;
 
             //Assert
             Assert.Equal(expectedResult, result);
-        }
-
-        int Add(int x, int y)
-        {
-            return y + y;
         }
     }
 }
