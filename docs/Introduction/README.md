@@ -1,5 +1,11 @@
 # Introduction
 
+## What's DevOps?
+
+![What's DevOps](./imgs/WhatsDevOps.PNG)
+
+![The 3 Stage Conversation Of DevOps](./imgs/The3StageConversationOfDevOps.PNG)
+
 ![DevOps Lifecycle](./imgs/DevOpsLifecycle.PNG)
 
 Basic DevOps' toolchain:
@@ -24,8 +30,8 @@ How we measure success?
 - Increased customer satisfaction
 - Dynamic and Secure
 
-Example of the Agile/DevOps move the VSTS team at Microsoft did:
+## Let's start the lab!
 
-![VSTS Team - Before/After](./imgs/VSTSTeam-BeforeAfter.PNG)
+![Lab Workflow](./imgs/LabWorkflow.PNG)
 
 Start your lab: [Lab 1 - Source control](../Lab%201%20-%20Source%20control/README.md)
