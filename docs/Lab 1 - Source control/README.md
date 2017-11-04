@@ -21,7 +21,7 @@ You will go through 3 main sections in this lab:
 ## Import existing Git repository
 
 0. Open a new web browser instance in Incognito, Private or InPrivate mode to avoid any signed-in session conflict.
-1. Go to your VSTS account `https://<yourvstsaccount>.visualstudio.com` and open your existing empty project (default: "MyFirstProject", otherwise create a new one).
+1. Go to your VSTS account `https://<yourvstsaccount>.visualstudio.com` and open your existing empty project (default: **MyFirstProject**, otherwise create a new one).
 2. Navigate to the **Code** tab
 3. Use the "Import into an existing empty repository" feature by hitting the **Import** button like illustrated on the image below.
 
@@ -45,7 +45,7 @@ Note: this GitHub repository you are importing contains a sample ASP.NET Core we
 
 ## Setup Slack notification for "Pull Request created"
 
-8. Sign-in with your Slack account for this lab - `https://<youraccount>.slack.com`. *For the Agile Tour Quebec 2017, check out your sticker*.
+8. Sign-in with your Slack account for this lab - for example: `https://atq-qc-2017.slack.com.slack.com`.
 9. Go to this new app configuration link: `https://atq-qc-2017.slack.com/apps/new/A0F81FPF0-visual-studio-team-services`, type the `#code` channel and click on the **Add Visual Studio Integration** button.
 
 ![Slack - Add Visual Studio Integration - Code Pushed](./imgs/Slack-AddVisualStudioIntegration-CodePushed.PNG)
