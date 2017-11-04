@@ -2,6 +2,10 @@ Previous lab: [Lab 5 - Decoupling with Microservices](../Lab%205%20-%20Decouplin
 
 # Conclusion
 
+## DevOps Lifecycle
+
+![DevOps Lifecycle](./imgs/DevOpsLifecycle.PNG)
+
 ## The DevOps Movement
 
 ![The DevOps Movement](./imgs/TheDevOpsMovement.PNG)
@@ -41,6 +45,7 @@ Previous lab: [Lab 5 - Decoupling with Microservices](../Lab%205%20-%20Decouplin
 - Security tests
 - Chaos monkey and fault injection tests
 - Social media feedback integration in backlog
+- A/B Testing, prototyping
 
 ## Resources
 
