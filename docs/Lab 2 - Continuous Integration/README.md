@@ -45,7 +45,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSBuild - Resolve Get Sources](./imgs/VSTSBuild-ResolveGetSources.PNG)
 
-5. Navigate to the **Trigger** tab of this Build definition page and enable the **Trigger status** of the **Continuous Integration** section.
+5. Navigate to the **Triggers** tab of this Build definition page and enable the **Trigger status** of the **Continuous Integration** section.
 
 ![VSTSBuild - CI Trigger](./imgs/VSTSBuild-CITrigger.PNG)
 
@@ -78,7 +78,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSCode - Edit And Commit Code](./imgs/VSTSCode-EditAndCommitCode.PNG)
 
-13. You will be invited to create a Pull Request based on this commit on this branch. Let's proceed to land on the New Pull Request page:
+13. You will be invited to create a Pull Request based on this commit on this branch. Let's proceed to land on the **New Pull Request** page:
 
 ![VSTSCode - Create Pull Request](./imgs/VSTSCode-CreatePullRequest.PNG)
 
@@ -116,7 +116,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSBuild - Add Tasks Group](./imgs/VSTSBuild-AddTasksGroup.PNG)
 
-21. "Save and Queue" this build. Once it will be successfully completed you should see the 3 artifacts below and should see the Slack notifications as well:
+21. **Save and Queue** this build. Once it will be successfully completed you should see the 3 artifacts below and should see the Slack notifications as well:
 
 ![VSTSBuild - Artifacts](./imgs/VSTSBuild-Artifacts.PNG)
 
