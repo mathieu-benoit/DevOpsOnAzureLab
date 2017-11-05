@@ -9,6 +9,7 @@ namespace MainWebApplication.Pages
         public void OnGet()
         {
             Message = "Your contact page.";
+            throw new System.Exception("Simulate a 500 error!");
         }
     }
 }

@@ -25,12 +25,17 @@
   <Import Condition=" Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets') " Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets" />
   <!-- vertag<:>end -->
   <ItemGroup>
+    <None Include="AddResourceGroupAllowedLocationsPolicy.ps1" />
+    <None Include="AddResourceGroupAllowedResourceTypesPolicy.ps1" />
+    <None Include="AddResourceGroupDoNotDeleteLock.ps1" />
+    <None Include="CheckIfParentWebAppAlreadyExists.ps1" />
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
     <Content Include="Deploy-AzureResourceGroup.ps1" />
     <Content Include="template.json" />
     <Content Include="template.parameters.json" />
+    <None Include="template-slot.json" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>

@@ -1,30 +1,30 @@
 {
   "source": 2,
   "id": 2,
-  "revision": 10,
+  "revision": 12,
   "name": "CD",
   "description": null,
   "createdBy": {
-    "id": "17256fe4-f2a3-4370-b081-ec283edb6a77",
-    "displayName": "Mathieu Benoit",
-    "uniqueName": "mabenoit@microsoft.com",
-    "url": "https://app.vssps.visualstudio.com/A6d1a4ff8-9a1f-46cb-bd61-54cb9a797939/_apis/Identities/17256fe4-f2a3-4370-b081-ec283edb6a77",
-    "imageUrl": "https://mabenoit-ms.visualstudio.com/_api/_common/identityImage?id=17256fe4-f2a3-4370-b081-ec283edb6a77"
+    "id": "4d59e5ee-2317-61e6-83c4-e176bef30834",
+    "displayName": "atq2017-devops-2",
+    "uniqueName": "atq2017-devops-2@tinoza.org",
+    "url": "https://app.vssps.visualstudio.com/A82129c17-97c7-4ce6-ad57-50f0e8839b9b/_apis/Identities/4d59e5ee-2317-61e6-83c4-e176bef30834",
+    "imageUrl": "https://atq2017devops2.visualstudio.com/_api/_common/identityImage?id=4d59e5ee-2317-61e6-83c4-e176bef30834"
   },
-  "createdOn": "2017-11-02T23:42:41.403Z",
+  "createdOn": "2017-11-03T18:41:14.150Z",
   "modifiedBy": {
-    "id": "17256fe4-f2a3-4370-b081-ec283edb6a77",
-    "displayName": "Mathieu Benoit",
-    "uniqueName": "mabenoit@microsoft.com",
-    "url": "https://app.vssps.visualstudio.com/A6d1a4ff8-9a1f-46cb-bd61-54cb9a797939/_apis/Identities/17256fe4-f2a3-4370-b081-ec283edb6a77",
-    "imageUrl": "https://mabenoit-ms.visualstudio.com/_api/_common/identityImage?id=17256fe4-f2a3-4370-b081-ec283edb6a77"
+    "id": "4d59e5ee-2317-61e6-83c4-e176bef30834",
+    "displayName": "atq2017-devops-2",
+    "uniqueName": "atq2017-devops-2@tinoza.org",
+    "url": "https://app.vssps.visualstudio.com/A82129c17-97c7-4ce6-ad57-50f0e8839b9b/_apis/Identities/4d59e5ee-2317-61e6-83c4-e176bef30834",
+    "imageUrl": "https://atq2017devops2.visualstudio.com/_api/_common/identityImage?id=4d59e5ee-2317-61e6-83c4-e176bef30834"
   },
-  "modifiedOn": "2017-11-03T12:27:22.147Z",
+  "modifiedOn": "2017-11-05T01:48:57.903Z",
   "isDeleted": false,
   "path": "\\",
   "variables": {
     "AppServiceName": {
-      "value": "atq2017devopsx"
+      "value": ""
     },
     "Location": {
       "value": "East US"
@@ -39,15 +39,15 @@
   "variableGroups": [],
   "environments": [
     {
-      "id": 3,
+      "id": 2,
       "name": "DEV",
       "rank": 1,
       "owner": {
-        "id": "17256fe4-f2a3-4370-b081-ec283edb6a77",
-        "displayName": "Mathieu Benoit",
-        "uniqueName": "mabenoit@microsoft.com",
-        "url": "https://app.vssps.visualstudio.com/A6d1a4ff8-9a1f-46cb-bd61-54cb9a797939/_apis/Identities/17256fe4-f2a3-4370-b081-ec283edb6a77",
-        "imageUrl": "https://mabenoit-ms.visualstudio.com/_api/_common/identityImage?id=17256fe4-f2a3-4370-b081-ec283edb6a77"
+        "id": "4d59e5ee-2317-61e6-83c4-e176bef30834",
+        "displayName": "atq2017-devops-2",
+        "uniqueName": "atq2017-devops-2@tinoza.org",
+        "url": "https://app.vssps.visualstudio.com/A82129c17-97c7-4ce6-ad57-50f0e8839b9b/_apis/Identities/4d59e5ee-2317-61e6-83c4-e176bef30834",
+        "imageUrl": "https://atq2017devops2.visualstudio.com/_api/_common/identityImage?id=4d59e5ee-2317-61e6-83c4-e176bef30834"
       },
       "variables": {},
       "preDeployApprovals": {
@@ -56,13 +56,13 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 7
+            "id": 4
           }
         ]
       },
       "deployStep": {
         "tasks": [],
-        "id": 16
+        "id": 13
       },
       "postDeployApprovals": {
         "approvals": [
@@ -70,7 +70,7 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 17
+            "id": 14
           }
         ]
       },
@@ -84,7 +84,7 @@
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": 72,
+            "queueId": 4,
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -209,7 +209,7 @@
             "properties": {},
             "name": "ConnectedServiceName",
             "label": "Azure subscription",
-            "defaultValue": "f85bb269-a6c2-4b50-b89e-e7d5ec1a4e5f",
+            "defaultValue": "bd53e9e7-f80f-4b94-9a52-770e94e738aa",
             "required": true,
             "type": "connectedService:AzureRM",
             "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
@@ -235,15 +235,15 @@
       "properties": {}
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "QA-staging",
       "rank": 2,
       "owner": {
-        "id": "17256fe4-f2a3-4370-b081-ec283edb6a77",
-        "displayName": "Mathieu Benoit",
-        "uniqueName": "mabenoit@microsoft.com",
-        "url": "https://app.vssps.visualstudio.com/A6d1a4ff8-9a1f-46cb-bd61-54cb9a797939/_apis/Identities/17256fe4-f2a3-4370-b081-ec283edb6a77",
-        "imageUrl": "https://mabenoit-ms.visualstudio.com/_api/_common/identityImage?id=17256fe4-f2a3-4370-b081-ec283edb6a77"
+        "id": "4d59e5ee-2317-61e6-83c4-e176bef30834",
+        "displayName": "atq2017-devops-2",
+        "uniqueName": "atq2017-devops-2@tinoza.org",
+        "url": "https://app.vssps.visualstudio.com/A82129c17-97c7-4ce6-ad57-50f0e8839b9b/_apis/Identities/4d59e5ee-2317-61e6-83c4-e176bef30834",
+        "imageUrl": "https://atq2017devops2.visualstudio.com/_api/_common/identityImage?id=4d59e5ee-2317-61e6-83c4-e176bef30834"
       },
       "variables": {},
       "preDeployApprovals": {
@@ -252,13 +252,13 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 8
+            "id": 5
           }
         ]
       },
       "deployStep": {
         "tasks": [],
-        "id": 15
+        "id": 12
       },
       "postDeployApprovals": {
         "approvals": [
@@ -266,7 +266,7 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 18
+            "id": 15
           }
         ]
       },
@@ -280,7 +280,7 @@
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": 72,
+            "queueId": 4,
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -507,7 +507,7 @@
             "properties": {},
             "name": "ConnectedServiceName",
             "label": "Azure subscription",
-            "defaultValue": "f85bb269-a6c2-4b50-b89e-e7d5ec1a4e5f",
+            "defaultValue": "bd53e9e7-f80f-4b94-9a52-770e94e738aa",
             "required": true,
             "type": "connectedService:AzureRM",
             "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
@@ -533,15 +533,15 @@
       "properties": {}
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "QA",
       "rank": 3,
       "owner": {
-        "id": "17256fe4-f2a3-4370-b081-ec283edb6a77",
-        "displayName": "Mathieu Benoit",
-        "uniqueName": "mabenoit@microsoft.com",
-        "url": "https://app.vssps.visualstudio.com/A6d1a4ff8-9a1f-46cb-bd61-54cb9a797939/_apis/Identities/17256fe4-f2a3-4370-b081-ec283edb6a77",
-        "imageUrl": "https://mabenoit-ms.visualstudio.com/_api/_common/identityImage?id=17256fe4-f2a3-4370-b081-ec283edb6a77"
+        "id": "4d59e5ee-2317-61e6-83c4-e176bef30834",
+        "displayName": "atq2017-devops-2",
+        "uniqueName": "atq2017-devops-2@tinoza.org",
+        "url": "https://app.vssps.visualstudio.com/A82129c17-97c7-4ce6-ad57-50f0e8839b9b/_apis/Identities/4d59e5ee-2317-61e6-83c4-e176bef30834",
+        "imageUrl": "https://atq2017devops2.visualstudio.com/_api/_common/identityImage?id=4d59e5ee-2317-61e6-83c4-e176bef30834"
       },
       "variables": {},
       "preDeployApprovals": {
@@ -550,13 +550,13 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 9
+            "id": 22
           }
         ]
       },
       "deployStep": {
         "tasks": [],
-        "id": 14
+        "id": 11
       },
       "postDeployApprovals": {
         "approvals": [
@@ -564,7 +564,7 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 19
+            "id": 16
           }
         ]
       },
@@ -578,7 +578,7 @@
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": 72,
+            "queueId": 4,
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -614,9 +614,7 @@
                 "PreserveVnet": "false",
                 "Slot": "",
                 "ExtensionsList": "",
-                "OutputVariable": "",
-                "AppInsightsResourceGroupName": "",
-                "ApplicationInsightsResourceName": ""
+                "OutputVariable": ""
               }
             },
             {
@@ -717,7 +715,7 @@
             "properties": {},
             "name": "ConnectedServiceName",
             "label": "Azure subscription",
-            "defaultValue": "f85bb269-a6c2-4b50-b89e-e7d5ec1a4e5f",
+            "defaultValue": "bd53e9e7-f80f-4b94-9a52-770e94e738aa",
             "required": true,
             "type": "connectedService:AzureRM",
             "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
@@ -744,176 +742,17 @@
     },
     {
       "id": 6,
-      "name": "Delete QA-staging and QA",
+      "name": "Rollback QA",
       "rank": 4,
       "owner": {
-        "id": "17256fe4-f2a3-4370-b081-ec283edb6a77",
-        "displayName": "Mathieu Benoit",
-        "uniqueName": "mabenoit@microsoft.com",
-        "url": "https://app.vssps.visualstudio.com/A6d1a4ff8-9a1f-46cb-bd61-54cb9a797939/_apis/Identities/17256fe4-f2a3-4370-b081-ec283edb6a77",
-        "imageUrl": "https://mabenoit-ms.visualstudio.com/_api/_common/identityImage?id=17256fe4-f2a3-4370-b081-ec283edb6a77"
+        "id": "4d59e5ee-2317-61e6-83c4-e176bef30834",
+        "displayName": "atq2017-devops-2",
+        "uniqueName": "atq2017-devops-2@tinoza.org",
+        "url": "https://app.vssps.visualstudio.com/A82129c17-97c7-4ce6-ad57-50f0e8839b9b/_apis/Identities/4d59e5ee-2317-61e6-83c4-e176bef30834",
+        "imageUrl": "https://atq2017devops2.visualstudio.com/_api/_common/identityImage?id=4d59e5ee-2317-61e6-83c4-e176bef30834"
       },
       "variables": {},
       "preDeployApprovals": {
-        "approvals": [
-          {
-            "rank": 1,
-            "isAutomated": true,
-            "isNotificationOn": false,
-            "id": 10
-          }
-        ]
-      },
-      "deployStep": {
-        "tasks": [],
-        "id": 13
-      },
-      "postDeployApprovals": {
-        "approvals": [
-          {
-            "rank": 1,
-            "isAutomated": true,
-            "isNotificationOn": false,
-            "id": 20
-          }
-        ]
-      },
-      "deployPhases": [
-        {
-          "deploymentInput": {
-            "parallelExecution": {
-              "parallelExecutionType": "none"
-            },
-            "skipArtifactsDownload": false,
-            "artifactsDownloadInput": {
-              "downloadInputs": []
-            },
-            "queueId": 72,
-            "demands": [],
-            "enableAccessToken": false,
-            "timeoutInMinutes": 0,
-            "jobCancelTimeoutInMinutes": 1,
-            "condition": "succeeded()",
-            "overrideInputs": {}
-          },
-          "rank": 1,
-          "phaseType": 1,
-          "name": "Agent phase",
-          "workflowTasks": [
-            {
-              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
-              "version": "2.*",
-              "name": "Delete Resource Group",
-              "refName": "AzureResourceGroupDeployment1",
-              "enabled": true,
-              "alwaysRun": false,
-              "continueOnError": false,
-              "timeoutInMinutes": 0,
-              "definitionType": "task",
-              "overrideInputs": {},
-              "condition": "succeeded()",
-              "inputs": {
-                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
-                "action": "DeleteRG",
-                "resourceGroupName": "$(Parameters.WebAppName)",
-                "location": "",
-                "templateLocation": "Linked artifact",
-                "csmFileLink": "",
-                "csmParametersFileLink": "",
-                "csmFile": "",
-                "csmParametersFile": "",
-                "overrideParameters": "",
-                "deploymentMode": "Incremental",
-                "enableDeploymentPrerequisites": "None",
-                "deploymentGroupEndpoint": "",
-                "project": "",
-                "deploymentGroupName": "",
-                "copyAzureVMTags": "true",
-                "outputVariable": ""
-              }
-            }
-          ]
-        }
-      ],
-      "environmentOptions": {
-        "emailNotificationType": "OnlyOnFailure",
-        "emailRecipients": "release.environment.owner;release.creator",
-        "skipArtifactsDownload": false,
-        "timeoutInMinutes": 0,
-        "enableAccessToken": false,
-        "publishDeploymentStatus": true
-      },
-      "demands": [],
-      "conditions": [],
-      "executionPolicy": {
-        "concurrencyCount": 0,
-        "queueDepthCount": 0
-      },
-      "schedules": [],
-      "retentionPolicy": {
-        "daysToKeep": 30,
-        "releasesToKeep": 3,
-        "retainBuild": true
-      },
-      "processParameters": {
-        "inputs": [
-          {
-            "options": {},
-            "properties": {},
-            "name": "ConnectedServiceName",
-            "label": "Azure subscription",
-            "defaultValue": "f85bb269-a6c2-4b50-b89e-e7d5ec1a4e5f",
-            "required": true,
-            "type": "connectedService:AzureRM",
-            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
-            "visibleRule": "",
-            "groupName": ""
-          },
-          {
-            "options": {},
-            "properties": {
-              "EditableOptions": "True"
-            },
-            "name": "WebAppName",
-            "label": "App service name",
-            "defaultValue": "$(AppServiceName)-qa",
-            "required": true,
-            "type": "pickList",
-            "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
-            "visibleRule": "",
-            "groupName": ""
-          }
-        ]
-      },
-      "properties": {}
-    },
-    {
-      "id": 7,
-      "name": "Rollback QA",
-      "rank": 5,
-      "owner": {
-        "id": "17256fe4-f2a3-4370-b081-ec283edb6a77",
-        "displayName": "Mathieu Benoit",
-        "uniqueName": "mabenoit@microsoft.com",
-        "url": "https://app.vssps.visualstudio.com/A6d1a4ff8-9a1f-46cb-bd61-54cb9a797939/_apis/Identities/17256fe4-f2a3-4370-b081-ec283edb6a77",
-        "imageUrl": "https://mabenoit-ms.visualstudio.com/_api/_common/identityImage?id=17256fe4-f2a3-4370-b081-ec283edb6a77"
-      },
-      "variables": {},
-      "preDeployApprovals": {
-        "approvals": [
-          {
-            "rank": 1,
-            "isAutomated": true,
-            "isNotificationOn": false,
-            "id": 11
-          }
-        ]
-      },
-      "deployStep": {
-        "tasks": [],
-        "id": 12
-      },
-      "postDeployApprovals": {
         "approvals": [
           {
             "rank": 1,
@@ -923,6 +762,20 @@
           }
         ]
       },
+      "deployStep": {
+        "tasks": [],
+        "id": 9
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 18
+          }
+        ]
+      },
       "deployPhases": [
         {
           "deploymentInput": {
@@ -933,7 +786,7 @@
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": 72,
+            "queueId": 4,
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -969,9 +822,7 @@
                 "PreserveVnet": "false",
                 "Slot": "",
                 "ExtensionsList": "",
-                "OutputVariable": "",
-                "AppInsightsResourceGroupName": "",
-                "ApplicationInsightsResourceName": ""
+                "OutputVariable": ""
               }
             },
             {
@@ -1066,7 +917,152 @@
             "properties": {},
             "name": "ConnectedServiceName",
             "label": "Azure subscription",
-            "defaultValue": "f85bb269-a6c2-4b50-b89e-e7d5ec1a4e5f",
+            "defaultValue": "bd53e9e7-f80f-4b94-9a52-770e94e738aa",
+            "required": true,
+            "type": "connectedService:AzureRM",
+            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
+            "visibleRule": "",
+            "groupName": ""
+          },
+          {
+            "options": {},
+            "properties": {
+              "EditableOptions": "True"
+            },
+            "name": "WebAppName",
+            "label": "App service name",
+            "defaultValue": "$(AppServiceName)-qa",
+            "required": true,
+            "type": "pickList",
+            "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
+            "visibleRule": "",
+            "groupName": ""
+          }
+        ]
+      },
+      "properties": {}
+    },
+    {
+      "id": 5,
+      "name": "Delete QA-staging and QA",
+      "rank": 5,
+      "owner": {
+        "id": "4d59e5ee-2317-61e6-83c4-e176bef30834",
+        "displayName": "atq2017-devops-2",
+        "uniqueName": "atq2017-devops-2@tinoza.org",
+        "url": "https://app.vssps.visualstudio.com/A82129c17-97c7-4ce6-ad57-50f0e8839b9b/_apis/Identities/4d59e5ee-2317-61e6-83c4-e176bef30834",
+        "imageUrl": "https://atq2017devops2.visualstudio.com/_api/_common/identityImage?id=4d59e5ee-2317-61e6-83c4-e176bef30834"
+      },
+      "variables": {},
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 7
+          }
+        ]
+      },
+      "deployStep": {
+        "tasks": [],
+        "id": 10
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 17
+          }
+        ]
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": 4,
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": 1,
+          "name": "Agent phase",
+          "workflowTasks": [
+            {
+              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "version": "2.*",
+              "name": "Delete Resource Group",
+              "refName": "AzureResourceGroupDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "action": "DeleteRG",
+                "resourceGroupName": "$(Parameters.WebAppName)",
+                "location": "",
+                "templateLocation": "Linked artifact",
+                "csmFileLink": "",
+                "csmParametersFileLink": "",
+                "csmFile": "",
+                "csmParametersFile": "",
+                "overrideParameters": "",
+                "deploymentMode": "Incremental",
+                "enableDeploymentPrerequisites": "None",
+                "deploymentGroupEndpoint": "",
+                "project": "",
+                "deploymentGroupName": "",
+                "copyAzureVMTags": "true",
+                "outputVariable": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true
+      },
+      "demands": [],
+      "conditions": [],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {
+        "inputs": [
+          {
+            "options": {},
+            "properties": {},
+            "name": "ConnectedServiceName",
+            "label": "Azure subscription",
+            "defaultValue": "bd53e9e7-f80f-4b94-9a52-770e94e738aa",
             "required": true,
             "type": "connectedService:AzureRM",
             "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
@@ -1092,64 +1088,16 @@
       "properties": {}
     }
   ],
-  "artifacts": [
-    {
-      "sourceId": "991f8a2a-2fdc-4d52-b5bb-138636785f82:29",
-      "type": "Build",
-      "alias": "CI",
-      "definitionReference": {
-        "artifactSourceDefinitionUrl": {
-          "id": "https://mabenoit-ms.visualstudio.com/_permalink/_build/index?collectionId=e373a2ff-a162-446f-b7ec-415465e9e56c&projectId=991f8a2a-2fdc-4d52-b5bb-138636785f82&definitionId=29",
-          "name": ""
-        },
-        "defaultVersionBranch": {
-          "id": "",
-          "name": ""
-        },
-        "defaultVersionSpecific": {
-          "id": "",
-          "name": ""
-        },
-        "defaultVersionTags": {
-          "id": "",
-          "name": ""
-        },
-        "defaultVersionType": {
-          "id": "latestType",
-          "name": "Latest"
-        },
-        "definition": {
-          "id": "29",
-          "name": "CI"
-        },
-        "project": {
-          "id": "991f8a2a-2fdc-4d52-b5bb-138636785f82",
-          "name": "atq2017devops"
-        }
-      },
-      "isPrimary": true
-    }
-  ],
-  "triggers": [
-    {
-      "artifactAlias": "CI",
-      "triggerConditions": [
-        {
-          "sourceBranch": "master",
-          "tags": []
-        }
-      ],
-      "triggerType": 1
-    }
-  ],
+  "artifacts": [],
+  "triggers": [],
   "releaseNameFormat": "Release-$(rev:r)",
-  "url": "https://mabenoit-ms.vsrm.visualstudio.com/991f8a2a-2fdc-4d52-b5bb-138636785f82/_apis/Release/definitions/2",
+  "url": "https://atq2017devops2.vsrm.visualstudio.com/8793ddae-9fb8-4605-8111-1185cf53649b/_apis/Release/definitions/2",
   "_links": {
     "self": {
-      "href": "https://mabenoit-ms.vsrm.visualstudio.com/991f8a2a-2fdc-4d52-b5bb-138636785f82/_apis/Release/definitions/2"
+      "href": "https://atq2017devops2.vsrm.visualstudio.com/8793ddae-9fb8-4605-8111-1185cf53649b/_apis/Release/definitions/2"
     },
     "web": {
-      "href": "https://mabenoit-ms.visualstudio.com/991f8a2a-2fdc-4d52-b5bb-138636785f82/_release?definitionId=2"
+      "href": "https://atq2017devops2.visualstudio.com/8793ddae-9fb8-4605-8111-1185cf53649b/_release?definitionId=2"
     }
   },
   "tags": [],
