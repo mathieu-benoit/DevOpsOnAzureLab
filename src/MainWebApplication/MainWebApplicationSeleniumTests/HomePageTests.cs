@@ -16,10 +16,8 @@ namespace MainWebApplicationSeleniumTests
             Driver.Navigate().GoToUrl(homepageUrl);
 
             //Assert
-            Assert.IsFalse(string.IsNullOrEmpty(Driver.Title));
-            Assert.IsTrue(Driver.Title.Equals("Home Page - MainWebApplication"));
-            Assert.IsFalse(string.IsNullOrEmpty(Driver.Url));
-            Assert.IsTrue(Driver.Url == homepageUrl);
+            Assert.AreEqual("Home Page - MainWebApplication", Driver.Title);
+            Assert.AreEqual(homepageUrl, Driver.Url);
         }
     }
 }

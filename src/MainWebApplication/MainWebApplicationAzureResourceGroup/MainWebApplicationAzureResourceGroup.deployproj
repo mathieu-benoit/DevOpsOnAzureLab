@@ -27,6 +27,7 @@
   <ItemGroup>
     <None Include="AddResourceGroupAllowedLocationsPolicy.ps1" />
     <None Include="AddResourceGroupAllowedResourceTypesPolicy.ps1" />
+    <None Include="RemoveResourceGroupDoNotDeleteLock.ps1" />
     <None Include="AddResourceGroupDoNotDeleteLock.ps1" />
     <None Include="CheckIfParentWebAppAlreadyExists.ps1" />
     <None Include="Deployment.targets">

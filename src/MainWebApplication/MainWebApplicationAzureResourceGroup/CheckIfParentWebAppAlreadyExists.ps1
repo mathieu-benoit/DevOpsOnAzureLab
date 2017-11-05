@@ -9,8 +9,8 @@ Param(
 #Select-AzureRmSubscription -SubscriptionId $SubscriptionId;
 $webApp = Get-AzureRMWebApp -Name $WebAppName;
 if ($webApp -ne $null) {
-    Write-Output ("##vso[task.setvariable variable=ParentWebAppAlreadyExists;]false");
+    Write-Output ("##vso[task.setvariable variable=ParentWebAppAlreadyExists;]true");
 }
 else{
-    Write-Output ("##vso[task.setvariable variable=ParentWebAppAlreadyExists;]true");
+    Write-Output ("##vso[task.setvariable variable=ParentWebAppAlreadyExists;]false");
 }
