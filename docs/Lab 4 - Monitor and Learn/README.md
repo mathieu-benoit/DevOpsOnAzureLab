@@ -2,7 +2,7 @@ Previous lab: [Lab 3 - Continuous Delivery](../Lab%203%20-%20Continuous%20Delive
 
 # Lab 4 - Monitoring
 
-Duration: XX min
+Duration: 10 min
 
 https://almvm.azurewebsites.net/labs/vsts/monitor/
 -Diagnostics

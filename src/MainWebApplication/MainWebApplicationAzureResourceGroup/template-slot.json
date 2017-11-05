@@ -18,13 +18,38 @@
       "name": "[concat(parameters('webAppName'), '/', parameters('slotName'))]",
       "type": "Microsoft.Web/sites/slots",
       "location": "[resourceGroup().location]",
-      "dependsOn": [],
+      "dependsOn": [
+        "[resourceId('Microsoft.Insights/components/', concat(parameters('webAppName'), '-', parameters('slotName')))]"
+      ],
       "properties": {
         "name": "[concat(parameters('webAppName'), '(', parameters('slotName'), ')')]",
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('webAppName'))]"
       },
       "tags": {
         "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('webAppName'))]": "Resource"
+      },
+      "resources": [
+        {
+          "apiVersion": "2015-08-01",
+          "name": "appsettings",
+          "type": "config",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/sites/slots', parameters('webAppName'), parameters('slotName'))]"
+          ],
+          "properties": {
+            "ApplicationInsights:InstrumentationKey": "[reference(concat('Microsoft.Insights/components/', parameters('webAppName'), '-', parameters('slotName')), '2015-05-01').InstrumentationKey]"
+          }
+        }
+      ]
+    },
+    {
+      "apiVersion": "2014-04-01",
+      "name": "[concat(parameters('webAppName'), '-', parameters('slotName'))]",
+      "type": "Microsoft.Insights/components",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [],
+      "properties": {
+        "applicationId": "[concat(parameters('webAppName'), '/', parameters('slotName'))]"
       }
     }
   ]
