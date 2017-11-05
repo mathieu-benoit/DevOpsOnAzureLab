@@ -11,12 +11,12 @@
       }
     },
     {
-      "enabled": false,
+      "enabled": true,
       "definition": {
         "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
       },
       "inputs": {
-        "workItemType": "1575432",
+        "workItemType": "853456",
         "assignToRequestor": "true",
         "additionalFields": "{}"
       }
@@ -27,6 +27,18 @@
         "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
       },
       "inputs": {}
+    }
+  ],
+  "triggers": [
+    {
+      "branchFilters": [
+        "+refs/heads/master"
+      ],
+      "pathFilters": [],
+      "batchChanges": false,
+      "maxConcurrentBuildsPerBranch": 1,
+      "pollingInterval": 0,
+      "triggerType": 2
     }
   ],
   "variables": {
@@ -41,6 +53,12 @@
     "system.debug": {
       "value": "false",
       "allowOverride": true
+    },
+    "DOTNET_SKIP_FIRST_TIME_EXPERIENCE": {
+      "value": "true"
+    },
+    "NUGET_XMLDOC_MODE": {
+      "value": "skip"
     }
   },
   "retentionRules": [
@@ -59,15 +77,177 @@
       "deleteTestResults": true
     }
   ],
+  "metrics": [
+    {
+      "name": "CurrentBuildsInQueue",
+      "scope": "refs/heads/master",
+      "intValue": 1
+    },
+    {
+      "name": "CurrentBuildsInProgress",
+      "scope": "refs/heads/master",
+      "intValue": 0
+    },
+    {
+      "name": "CanceledBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-11-03T00:00:00.000Z"
+    },
+    {
+      "name": "FailedBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 1,
+      "date": "2017-11-03T00:00:00.000Z"
+    },
+    {
+      "name": "PartiallySuccessfulBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-11-03T00:00:00.000Z"
+    },
+    {
+      "name": "SuccessfulBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 5,
+      "date": "2017-11-03T00:00:00.000Z"
+    },
+    {
+      "name": "TotalBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 6,
+      "date": "2017-11-03T00:00:00.000Z"
+    },
+    {
+      "name": "CanceledBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-11-02T00:00:00.000Z"
+    },
+    {
+      "name": "FailedBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 1,
+      "date": "2017-11-02T00:00:00.000Z"
+    },
+    {
+      "name": "PartiallySuccessfulBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-11-02T00:00:00.000Z"
+    },
+    {
+      "name": "SuccessfulBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-11-02T00:00:00.000Z"
+    },
+    {
+      "name": "TotalBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 1,
+      "date": "2017-11-02T00:00:00.000Z"
+    },
+    {
+      "name": "CanceledBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-10-31T00:00:00.000Z"
+    },
+    {
+      "name": "FailedBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 6,
+      "date": "2017-10-31T00:00:00.000Z"
+    },
+    {
+      "name": "PartiallySuccessfulBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-10-31T00:00:00.000Z"
+    },
+    {
+      "name": "SuccessfulBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 2,
+      "date": "2017-10-31T00:00:00.000Z"
+    },
+    {
+      "name": "TotalBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 8,
+      "date": "2017-10-31T00:00:00.000Z"
+    },
+    {
+      "name": "CanceledBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-10-30T00:00:00.000Z"
+    },
+    {
+      "name": "FailedBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 1,
+      "date": "2017-10-30T00:00:00.000Z"
+    },
+    {
+      "name": "PartiallySuccessfulBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-10-30T00:00:00.000Z"
+    },
+    {
+      "name": "SuccessfulBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 2,
+      "date": "2017-10-30T00:00:00.000Z"
+    },
+    {
+      "name": "TotalBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 3,
+      "date": "2017-10-30T00:00:00.000Z"
+    },
+    {
+      "name": "CanceledBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-10-29T00:00:00.000Z"
+    },
+    {
+      "name": "FailedBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-10-29T00:00:00.000Z"
+    },
+    {
+      "name": "PartiallySuccessfulBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 0,
+      "date": "2017-10-29T00:00:00.000Z"
+    },
+    {
+      "name": "SuccessfulBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 3,
+      "date": "2017-10-29T00:00:00.000Z"
+    },
+    {
+      "name": "TotalBuilds",
+      "scope": "refs/heads/master",
+      "intValue": 3,
+      "date": "2017-10-29T00:00:00.000Z"
+    }
+  ],
   "_links": {
     "self": {
-      "href": "https://atq2017devops1.visualstudio.com/c979e2cb-90ad-4eef-8543-0d79b4704c79/_apis/build/Definitions/2"
+      "href": "https://mabenoit-ms.visualstudio.com/991f8a2a-2fdc-4d52-b5bb-138636785f82/_apis/build/Definitions/29"
     },
     "web": {
-      "href": "https://atq2017devops1.visualstudio.com/_permalink/_build/index?collectionId=51799ff3-9f50-4a7b-9f63-9f71893a16e7&projectId=c979e2cb-90ad-4eef-8543-0d79b4704c79&definitionId=2"
+      "href": "https://mabenoit-ms.visualstudio.com/_permalink/_build/index?collectionId=e373a2ff-a162-446f-b7ec-415465e9e56c&projectId=991f8a2a-2fdc-4d52-b5bb-138636785f82&definitionId=29"
     },
     "editor": {
-      "href": "https://atq2017devops1.visualstudio.com/_permalink/_build/definitionEditor?collectionId=51799ff3-9f50-4a7b-9f63-9f71893a16e7&projectId=c979e2cb-90ad-4eef-8543-0d79b4704c79&definitionId=2"
+      "href": "https://mabenoit-ms.visualstudio.com/_permalink/_build/definitionEditor?collectionId=e373a2ff-a162-446f-b7ec-415465e9e56c&projectId=991f8a2a-2fdc-4d52-b5bb-138636785f82&definitionId=29"
     }
   },
   "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
@@ -170,8 +350,7 @@
             "alwaysRun": false,
             "displayName": "Expose \"app\" Artifact",
             "timeoutInMinutes": 0,
-            "condition": "succeeded()",
-            "refName": "ClonedPublishBuildArtifacts54",
+            "refName": "PublishBuildArtifacts5",
             "task": {
               "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
               "versionSpec": "1.*",
@@ -180,6 +359,107 @@
             "inputs": {
               "PathtoPublish": "$(build.artifactstagingdirectory)",
               "ArtifactName": "app",
+              "ArtifactType": "Container",
+              "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+              "Parallel": "false",
+              "ParallelCount": "8"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Expose \"infra\" Artifact",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "ClonedPublishBuildArtifacts53",
+            "task": {
+              "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "PathtoPublish": "src/MainWebApplication/MainWebApplicationAzureResourceGroup",
+              "ArtifactName": "infra",
+              "ArtifactType": "Container",
+              "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+              "Parallel": "false",
+              "ParallelCount": "8"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "NuGet restore (UITests)",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "NuGetCommand4",
+            "task": {
+              "id": "333b11bd-d341-40d9-afcf-b32d5ce6f23b",
+              "versionSpec": "0.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "solution": "src/MainWebApplication/MainWebApplicationSeleniumTests/packages.config",
+              "nugetConfigPath": "",
+              "restoreMode": "restore",
+              "noCache": "false",
+              "nuGetRestoreArgs": "-PackagesDirectory $(System.DefaultWorkingDirectory)/src/MainWebApplication/packages",
+              "verbosity": "-",
+              "nuGetVersion": "4.0.0.2283",
+              "nuGetPath": ""
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Build UITests",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "MSBuild5",
+            "task": {
+              "id": "c6c4c611-aa2e-4a33-b606-5eaba2196824",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "solution": "src/MainWebApplication/MainWebApplicationSeleniumTests/MainWebApplicationSeleniumTests.csproj",
+              "msbuildLocationMethod": "version",
+              "msbuildVersion": "latest",
+              "msbuildArchitecture": "x86",
+              "msbuildLocation": "",
+              "platform": "",
+              "configuration": "$(BuildConfiguration)",
+              "msbuildArguments": "",
+              "clean": "false",
+              "maximumCpuCount": "false",
+              "restoreNugetPackages": "false",
+              "logProjectEvents": "false",
+              "createLogFile": "false"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Expose \"ui-tests\" Artifact",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "ClonedClonedPublishBuildArtifacts536",
+            "task": {
+              "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "PathtoPublish": "$(build.sourcesdirectory)/src/MainWebApplication/MainWebApplicationSeleniumTests/bin/$(BuildConfiguration)",
+              "ArtifactName": "ui-tests",
               "ArtifactType": "Container",
               "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
               "Parallel": "false",
@@ -194,6 +474,7 @@
           "executionOptions": {
             "type": 0
           },
+          "allowScriptsAuthAccessOption": false,
           "type": 1
         },
         "jobAuthorizationScope": "projectCollection",
@@ -213,10 +494,10 @@
       "checkoutNestedSubmodules": "false",
       "fetchDepth": "0"
     },
-    "id": "b7171c40-7d6e-404a-9e50-71555309220c",
+    "id": "9bd1aff4-792f-4a06-b2ac-f32ccdb7ced5",
     "type": "TfsGit",
-    "name": "MyFirstProject",
-    "url": "https://atq2017devops1.visualstudio.com/_git/MyFirstProject",
+    "name": "atq2017devops",
+    "url": "https://mabenoit-ms.visualstudio.com/_git/atq2017devops",
     "defaultBranch": "refs/heads/master",
     "clean": "false",
     "checkoutSubmodules": false
@@ -224,6 +505,7 @@
   "processParameters": {
     "inputs": [
       {
+        "aliases": [],
         "options": {},
         "properties": {},
         "name": "RestoreBuildProjects",
@@ -235,6 +517,7 @@
         "groupName": ""
       },
       {
+        "aliases": [],
         "options": {},
         "properties": {},
         "name": "TestProjects",
@@ -249,15 +532,15 @@
   },
   "quality": 1,
   "authoredBy": {
-    "id": "d099711a-6f88-6e33-9448-9cc34ab5a282",
-    "displayName": "atq2017-devops-1",
-    "uniqueName": "atq2017-devops-1@tinoza.org",
-    "url": "https://app.vssps.visualstudio.com/Ae02d038a-e28d-4dd4-847b-8c901463b53e/_apis/Identities/d099711a-6f88-6e33-9448-9cc34ab5a282",
-    "imageUrl": "https://atq2017devops1.visualstudio.com/_api/_common/identityImage?id=d099711a-6f88-6e33-9448-9cc34ab5a282"
+    "id": "17256fe4-f2a3-4370-b081-ec283edb6a77",
+    "displayName": "Mathieu Benoit",
+    "uniqueName": "mabenoit@microsoft.com",
+    "url": "https://app.vssps.visualstudio.com/A6d1a4ff8-9a1f-46cb-bd61-54cb9a797939/_apis/Identities/17256fe4-f2a3-4370-b081-ec283edb6a77",
+    "imageUrl": "https://mabenoit-ms.visualstudio.com/_api/_common/identityImage?id=17256fe4-f2a3-4370-b081-ec283edb6a77&t=00000000-0000-0000-9093-e18cf71fd508"
   },
   "drafts": [],
   "queue": {
-    "id": 4,
+    "id": 72,
     "name": "Hosted VS2017",
     "pool": {
       "id": 4,
@@ -265,21 +548,21 @@
       "isHosted": true
     }
   },
-  "id": 2,
+  "id": 29,
   "name": "CI",
-  "url": "https://atq2017devops1.visualstudio.com/c979e2cb-90ad-4eef-8543-0d79b4704c79/_apis/build/Definitions/2",
-  "uri": "vstfs:///Build/Definition/2",
+  "url": "https://mabenoit-ms.visualstudio.com/991f8a2a-2fdc-4d52-b5bb-138636785f82/_apis/build/Definitions/29",
+  "uri": "vstfs:///Build/Definition/29",
   "path": "\\",
   "type": 2,
   "queueStatus": 0,
-  "revision": 1,
-  "createdDate": "2017-11-01T23:11:37.900Z",
+  "revision": 21,
+  "createdDate": "2017-11-03T22:36:33.877Z",
   "project": {
-    "id": "c979e2cb-90ad-4eef-8543-0d79b4704c79",
-    "name": "MyFirstProject",
-    "url": "https://atq2017devops1.visualstudio.com/_apis/projects/c979e2cb-90ad-4eef-8543-0d79b4704c79",
+    "id": "991f8a2a-2fdc-4d52-b5bb-138636785f82",
+    "name": "atq2017devops",
+    "url": "https://mabenoit-ms.visualstudio.com/_apis/projects/991f8a2a-2fdc-4d52-b5bb-138636785f82",
     "state": "wellFormed",
-    "revision": 10,
+    "revision": 163,
     "visibility": 0
   }
 }
