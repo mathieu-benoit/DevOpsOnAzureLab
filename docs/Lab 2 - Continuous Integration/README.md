@@ -49,7 +49,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSBuild - CI Trigger](./imgs/VSTSBuild-CITrigger.PNG)
 
-6. Navigate to the **Options** tab of this Build definition page and enable the **Create work item on failure** section.
+6. Navigate to the **Options** tab of this Build definition page and enable the **Create work item on failure** and **Automatically link new work in this build** sections.
 
 ![VSTSBuild - Create WorkItem On Failure](./imgs/VSTSBuild-CreateWorkItemOnFailure.PNG)
 
