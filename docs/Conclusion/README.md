@@ -46,6 +46,7 @@ Previous lab: [Lab 5 - Decoupling with Microservices](../Lab%205%20-%20Decouplin
 - Chaos monkey and fault injection tests
 - Social media feedback integration in backlog
 - A/B Testing, prototyping
+- Decoupling with Microservices: Serverless, Containers, etc.
 
 ## Resources
 
