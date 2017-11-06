@@ -18,6 +18,7 @@ Best practices highlighted:
 - Auto-trigger the CD when the associated CI is completed
 - Deploy the web app on Azure App Service to take advantage of the Cloud infrastructure and its capabilities
 - Protect infrastructure resources by adding restricted policies to control access and cost
+- Use the feature-flag concept to show or hide a feature available or not for the end users
 - Automate the communication with your teammates through Slack notifications
 
 You will go through 5 main sections in this lab:
@@ -26,7 +27,7 @@ You will go through 5 main sections in this lab:
 - Edit and customize the imported Release definition
 - Let's explore the tasks/steps of these environments
 - Approve manually the deployment from `QA-staging` to `QA`
-- Browse the Azure resources
+- Browse the Azure resources and enable a feature-flag
 
 ## Configure the CheckUrl extension and the Azure Resource Manager service endpoint and import a pre-built Release definition
 
@@ -136,7 +137,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSRelease - Succeeded Summary](./imgs/VSTSRelease-SucceededSummary.PNG)
 
-## Browse the Azure resources
+## Browse the Azure resources and enable a feature-flag
 
 19. Navigate to [https://portal.azure.com](https://portal.azure.com) where you should be able to see your Azure resources deployed:
 
@@ -152,6 +153,18 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![WebApp - Browse About Page](./imgs/WebApp-BrowseAboutPage.PNG)
 
-You are now all set for this lab. Let's now see what are the tools in place for the monitoring and learning pieces with the next lab.
+23. On the Azure portal, navigate to the `QA` Azure Web App > **Application settings** blade to change the feature-flat `MainWebApplication:EnableRandomAdditionFeature` to `true`, save your change:
+
+![WebApp - App Settings](./imgs/WebApp-AppSettings.PNG)
+
+24. Browse and refresh your `QA`'s homepage, a new menu entry `Random Addition` should appear, click on it:
+
+![WebApp - Browse Random Addition Feature](./imgs/WebApp-BrowseRandomAdditionFeature.PNG)
+
+25. You could change back the value of the feature-flag `MainWebApplication:EnableRandomAdditionFeature` to `false` and see that the menu will disapear.
+
+*Note: Not part of this lab, but like you can see this web application follow the "Monolythic spirit" since we have on the same web host: the web app with the front-end/back-end but the APIs as well (in our case the RandomAddition API). What you could do and think about is moving this API with a Microservice with an autonomous lifecycle process (code repository, build/release pipeline, etc.) independently of the web app. You could for example host your API in a Container, a Serverless, etc. approach, expose a REST API endpoint and change the app settings `MainWebApplication:EnableRandomAdditionFeature`.*
+
+You are now all set for this lab. Let's see what are the tools in place for the monitoring and learning pieces with the next lab.
 
 Next lab: [Lab 4 - Monitor and Learn](../Lab%204%20-%20Monitor%20and%20Learn/README.md)
