@@ -3,7 +3,7 @@
 Param(
     [string] $ResourceGroupLocation = 'East US',
     [string] [Parameter(Mandatory=$true)] $ResourceGroupName,
-    [string] $TemplateFile = 'template-slot.json'
+    [string] $TemplateFile = 'template.json'
 )
 
 #Login-AzureRmAccount

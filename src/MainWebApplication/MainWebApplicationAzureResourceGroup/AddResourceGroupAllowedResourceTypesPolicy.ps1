@@ -32,6 +32,6 @@ $resourceTypesAllowedParameter = '{
 
 $definition = New-AzureRmPolicyDefinition -Name ResourceTypes -Description "Policy to specify resource types for any resources in this resource group." -Policy $allowedResourceTypesPolicy -Parameter $resourceTypesAllowedParameter;
 $resourceGroup = Get-AzureRmResourceGroup -Name $ResourceGroupName;
-$allowedResourceTypesArrayValue = @("microsoft.insights/components", "Microsoft.Web/serverFarms", "Microsoft.Web/sites", "Microsoft.Web/sites/slots");
+$allowedResourceTypesArrayValue = @("microsoft.insights/components", "Microsoft.Web/serverFarms", "Microsoft.Web/sites", "Microsoft.Web/sites/slots", "Microsoft.Insights/alertrules", "Microsoft.Authorization/policyassignments");
 $allowedResourceTypesParameterObject = @{"allowedResourceTypes"=$allowedResourceTypesArrayValue};
 New-AzureRMPolicyAssignment -Name AllowedResourceTypesAssignment -Scope $resourceGroup.ResourceId -PolicyDefinition $definition -PolicyParameterObject $allowedResourceTypesParameterObject;

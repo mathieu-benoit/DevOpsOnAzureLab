@@ -33,7 +33,6 @@ You will go through 5 main sections in this lab:
 *Note: For the Agile Tour Quebec 2017, skip this section and [go directly to the next section](#edit-and-customize-the-imported-release-definition). These steps have already been done for you to save some time for your lab, so just start by editing the `CD` Release definition.*
 
 - Go to your VSTS account `https://<yourvstsaccount>.visualstudio.com` and open your VSTS project for this lab
-
 - Install the CheckUrl extension - https://marketplace.visualstudio.com/items?itemName=saeidbabaei.checkUrl
 - Configure an Azure Resource Manager endpoint for example with the name `Azure Paas - Connection`:
 
@@ -142,9 +141,15 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![Azure - All Resources](./imgs/Azure-AllResources.PNG)
 
-20. Browse the `DEV` Azure Web App to see the homepage of the web app you have deployed on it:
+20. Navigate to the `QA` Azure Web App > **Overview** blade to see the homepage of the web app you have deployed on it (it will open a new web browser tab):
 
-![Azure - DEV Web App](./imgs/Azure-DEVWebApp.PNG)
+![Azure - Browse Web App](./imgs/Azure-BrowseWebApp.PNG)
+
+21. On your web browser tab just opened, you should land on the homepage. To generate some insights hit "F5" many times on the different pages: **Home**, **About** and **Contact**. 
+
+22. Make sure you browse the **About** page, you should get an error (we will use that during the next lab):
+
+![WebApp - Browse About Page](./imgs/WebApp-BrowseAboutPage.PNG)
 
 You are now all set for this lab. Let's now see what are the tools in place for the monitoring and learning pieces with the next lab.
 
