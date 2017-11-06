@@ -82,7 +82,9 @@
             "[resourceId('Microsoft.Web/Sites', variables('webSiteName'))]"
           ],
           "properties": {
-            "ApplicationInsights:InstrumentationKey": "[reference(concat('Microsoft.Insights/components/', variables('webSiteName')), '2015-05-01').InstrumentationKey]"
+            "ApplicationInsights:InstrumentationKey": "[reference(concat('Microsoft.Insights/components/', variables('webSiteName')), '2015-05-01').InstrumentationKey]",
+            "MainWebApplication:EnableRandomAdditionFeature": "false",
+            "MainWebApplication:RandomAdditionApiUrl": "[concat('https://', variables('webSiteName'), '.azurewebsites.net/api/randomaddition')]"
           }
         },
         {
@@ -93,7 +95,11 @@
             "[resourceId('Microsoft.Web/Sites', variables('webSiteName'))]"
           ],
           "properties": {
-            "appSettingNames": [ "ApplicationInsights:InstrumentationKey" ]
+            "appSettingNames": [ 
+              "ApplicationInsights:InstrumentationKey",  
+              "MainWebApplication:EnableRandomAdditionFeature", 
+              "MainWebApplication:RandomAdditionApiUrl"
+            ]
           }
         }
       ]

@@ -37,7 +37,9 @@
             "[resourceId('Microsoft.Web/sites/slots', parameters('webAppName'), parameters('slotName'))]"
           ],
           "properties": {
-            "ApplicationInsights:InstrumentationKey": "[reference(concat('Microsoft.Insights/components/', parameters('webAppName'), '-', parameters('slotName')), '2015-05-01').InstrumentationKey]"
+            "ApplicationInsights:InstrumentationKey": "[reference(concat('Microsoft.Insights/components/', parameters('webAppName'), '-', parameters('slotName')), '2015-05-01').InstrumentationKey]",
+            "MainWebApplication:EnableRandomAdditionFeature": "false",
+            "MainWebApplication:RandomAdditionApiUrl": "[concat('https://', parameters('webAppName'), '-', parameters('slotName'), '.azurewebsites.net/api/randomaddition')]"
           }
         }
       ]
