@@ -84,7 +84,7 @@
           "properties": {
             "ApplicationInsights:InstrumentationKey": "[reference(concat('Microsoft.Insights/components/', variables('webSiteName')), '2015-05-01').InstrumentationKey]",
             "MainWebApplication:EnableRandomAdditionFeature": "false",
-            "MainWebApplication:RandomAdditionApiUrl": "[concat('https://', variables('webSiteName'), '.azurewebsites.net/api/randomaddition')]"
+            "MainWebApplication:RandomAdditionApiUrl": "[concat('http://', variables('webSiteName'), '.azurewebsites.net/api/randomaddition')]"
           }
         },
         {
