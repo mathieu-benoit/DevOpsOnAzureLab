@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using MainWebApplication.Services;
+@inject IConfigurationService configurationService
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -25,6 +28,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    @if (configurationService.IsRandomAdditionEnable())
+                    {
+                        <span class="icon-bar"></span>
+                    }
                 </button>
                 <a asp-page="/Index" class="navbar-brand">MainWebApplication</a>
             </div>
@@ -33,6 +40,10 @@
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/About">About</a></li>
                     <li><a asp-page="/Contact">Contact</a></li>
+                    @if (configurationService.IsRandomAdditionEnable())
+                    {
+                        <li><a asp-page="/RandomAddition">Random Addition</a></li>
+                    }
                 </ul>
             </div>
         </div>

@@ -1,0 +1,18 @@
+﻿@page
+@model RandomAdditionModel
+@{
+    ViewData["Title"] = "RandomAddition";
+}
+@section Scripts{
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.ajax({
+            url: "@Model.ApiUrl"
+        }).then(function(data) {
+            $('.randomadditionresult').append(data);
+        });
+    });
+</script>
+}
+<h2>@ViewData["Title"]</h2>
+<h3 class="randomadditionresult"></h3>
