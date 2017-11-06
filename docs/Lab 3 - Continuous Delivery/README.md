@@ -10,12 +10,14 @@ The goal of this lab is to configure the different steps of the Continuous Deliv
 
 Best practices highlighted:
 
+- Import Release Definition ("as code") provided by the "Ops" team
 - Use a dedicated version of the CI's artifacts (latest by default)
 - Use Azure ARM Templates as Infrastructue-as-code exposed by the "Ops" team
 - Store settings on the server - defined in the ARM Templates
-- Run UITests
+- Run UITests (Selenium)
 - Auto-trigger the CD when the associated CI is completed
-- Deploy the web app on Azure App Service to take advantage of the Cloud infrastructure and capabilities
+- Deploy the web app on Azure App Service to take advantage of the Cloud infrastructure and its capabilities
+- Protect infrastructure resources by adding restricted policies to control access and cost
 - Automate the communication with your teammates through Slack notifications
 
 You will go through 5 main sections in this lab:
