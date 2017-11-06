@@ -1,7 +1,7 @@
 {
   "source": 2,
-  "id": 4,
-  "revision": 25,
+  "id": 5,
+  "revision": 2,
   "name": "CD",
   "description": null,
   "createdBy": {
@@ -11,7 +11,7 @@
     "url": "https://app.vssps.visualstudio.com/A6d1a4ff8-9a1f-46cb-bd61-54cb9a797939/_apis/Identities/17256fe4-f2a3-4370-b081-ec283edb6a77",
     "imageUrl": "https://mabenoit-ms.visualstudio.com/_api/_common/identityImage?id=17256fe4-f2a3-4370-b081-ec283edb6a77"
   },
-  "createdOn": "2017-11-05T13:24:31.000Z",
+  "createdOn": "2017-11-06T00:19:44.177Z",
   "modifiedBy": {
     "id": "17256fe4-f2a3-4370-b081-ec283edb6a77",
     "displayName": "Mathieu Benoit",
@@ -19,7 +19,7 @@
     "url": "https://app.vssps.visualstudio.com/A6d1a4ff8-9a1f-46cb-bd61-54cb9a797939/_apis/Identities/17256fe4-f2a3-4370-b081-ec283edb6a77",
     "imageUrl": "https://mabenoit-ms.visualstudio.com/_api/_common/identityImage?id=17256fe4-f2a3-4370-b081-ec283edb6a77"
   },
-  "modifiedOn": "2017-11-05T16:42:30.363Z",
+  "modifiedOn": "2017-11-06T00:21:56.040Z",
   "isDeleted": false,
   "path": "\\",
   "variables": {
@@ -39,7 +39,7 @@
   "variableGroups": [],
   "environments": [
     {
-      "id": 9,
+      "id": 15,
       "name": "DEV",
       "rank": 1,
       "owner": {
@@ -56,13 +56,13 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 25
+            "id": 43
           }
         ]
       },
       "deployStep": {
         "tasks": [],
-        "id": 34
+        "id": 54
       },
       "postDeployApprovals": {
         "approvals": [
@@ -70,7 +70,7 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 35
+            "id": 55
           }
         ]
       },
@@ -281,7 +281,7 @@
       "properties": {}
     },
     {
-      "id": 10,
+      "id": 16,
       "name": "QA-staging",
       "rank": 2,
       "owner": {
@@ -298,13 +298,13 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 26
+            "id": 44
           }
         ]
       },
       "deployStep": {
         "tasks": [],
-        "id": 33
+        "id": 53
       },
       "postDeployApprovals": {
         "approvals": [
@@ -312,7 +312,7 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 36
+            "id": 56
           }
         ]
       },
@@ -651,7 +651,7 @@
       "properties": {}
     },
     {
-      "id": 11,
+      "id": 17,
       "name": "QA",
       "rank": 3,
       "owner": {
@@ -668,13 +668,13 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 27
+            "id": 45
           }
         ]
       },
       "deployStep": {
         "tasks": [],
-        "id": 32
+        "id": 52
       },
       "postDeployApprovals": {
         "approvals": [
@@ -682,7 +682,7 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 37
+            "id": 57
           }
         ]
       },
@@ -708,6 +708,38 @@
           "phaseType": 1,
           "name": "Agent phase",
           "workflowTasks": [
+            {
+              "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+              "version": "2.*",
+              "name": "Provision infra",
+              "refName": "AzureResourceGroupDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "$(Parameters.ConnectedServiceName)",
+                "action": "Create Or Update Resource Group",
+                "resourceGroupName": "$(Parameters.WebAppName)",
+                "location": "$(Location)",
+                "templateLocation": "Linked artifact",
+                "csmFileLink": "",
+                "csmParametersFileLink": "",
+                "csmFile": "$(System.DefaultWorkingDirectory)/CI/infra/template.json",
+                "csmParametersFile": "",
+                "overrideParameters": "-hostingPlanName $(Parameters.WebAppName)",
+                "deploymentMode": "Incremental",
+                "enableDeploymentPrerequisites": "None",
+                "deploymentGroupEndpoint": "",
+                "project": "",
+                "deploymentGroupName": "",
+                "copyAzureVMTags": "true",
+                "outputVariable": ""
+              }
+            },
             {
               "taskId": "f045e430-8704-11e6-968f-e717e6411619",
               "version": "0.*",
@@ -861,7 +893,7 @@
       "properties": {}
     },
     {
-      "id": 12,
+      "id": 18,
       "name": "Rollback QA",
       "rank": 4,
       "owner": {
@@ -878,13 +910,13 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 28
+            "id": 46
           }
         ]
       },
       "deployStep": {
         "tasks": [],
-        "id": 31
+        "id": 51
       },
       "postDeployApprovals": {
         "approvals": [
@@ -892,7 +924,7 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 38
+            "id": 58
           }
         ]
       },
@@ -1065,7 +1097,7 @@
       "properties": {}
     },
     {
-      "id": 13,
+      "id": 19,
       "name": "Delete QA",
       "rank": 5,
       "owner": {
@@ -1082,13 +1114,13 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 29
+            "id": 47
           }
         ]
       },
       "deployStep": {
         "tasks": [],
-        "id": 30
+        "id": 50
       },
       "postDeployApprovals": {
         "approvals": [
@@ -1096,7 +1128,7 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 39
+            "id": 59
           }
         ]
       },
@@ -1234,7 +1266,7 @@
       "properties": {}
     },
     {
-      "id": 14,
+      "id": 20,
       "name": "Delete DEV",
       "rank": 6,
       "owner": {
@@ -1251,13 +1283,13 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 40
+            "id": 48
           }
         ]
       },
       "deployStep": {
         "tasks": [],
-        "id": 41
+        "id": 49
       },
       "postDeployApprovals": {
         "approvals": [
@@ -1265,7 +1297,7 @@
             "rank": 1,
             "isAutomated": true,
             "isNotificationOn": false,
-            "id": 42
+            "id": 60
           }
         ]
       },
@@ -1382,13 +1414,13 @@
   "artifacts": [],
   "triggers": [],
   "releaseNameFormat": "Release-$(rev:r)",
-  "url": "https://mabenoit-ms.vsrm.visualstudio.com/991f8a2a-2fdc-4d52-b5bb-138636785f82/_apis/Release/definitions/4",
+  "url": "https://mabenoit-ms.vsrm.visualstudio.com/991f8a2a-2fdc-4d52-b5bb-138636785f82/_apis/Release/definitions/5",
   "_links": {
     "self": {
-      "href": "https://mabenoit-ms.vsrm.visualstudio.com/991f8a2a-2fdc-4d52-b5bb-138636785f82/_apis/Release/definitions/4"
+      "href": "https://mabenoit-ms.vsrm.visualstudio.com/991f8a2a-2fdc-4d52-b5bb-138636785f82/_apis/Release/definitions/5"
     },
     "web": {
-      "href": "https://mabenoit-ms.visualstudio.com/991f8a2a-2fdc-4d52-b5bb-138636785f82/_release?definitionId=4"
+      "href": "https://mabenoit-ms.visualstudio.com/991f8a2a-2fdc-4d52-b5bb-138636785f82/_release?definitionId=5"
     }
   },
   "tags": [],
