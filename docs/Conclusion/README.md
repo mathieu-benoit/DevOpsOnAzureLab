@@ -15,8 +15,8 @@ Previous lab: [Lab 5 - Decoupling with Microservices](../Lab%205%20-%20Decouplin
 - We all already do « some parts » of DevOps!
 - It’s not magic
 - Deliver often and fast with high value for end-user
-- Evolution of current and existing practives
-- Its’ continuous learning
+- Evolution of current and existing practices
+- It’s continuous learning
 - It’s not a methodology
 - It’s not only « Dev & Ops », many stakeholders are involved!
 

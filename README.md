@@ -1,6 +1,6 @@
 # DevOpsOnAzureLab
 
-This DevOps on Microsoft Azure lab is dedicated to demonstrate step-by-step how you could add DevOps practices for your current project. We are illustrating this lab with a sample ASP.NET Core web app hosted on Azure App Service (Web App) with Application Insights with all of that orchestrated by Visual Studio Team Services (VSTS).
+This *DevOps on Microsoft Azure lab* is designed as a step-by-step guide to demonstrate how you could add DevOps practices for any of your current projects. We are illustrating this lab with a sample ASP.NET Core web app hosted on Azure App Service (Web App) with Application Insights all of which is orchestrated by Visual Studio Team Services (VSTS).
 
 Total duration of this lab: 90 min
 
@@ -24,4 +24,4 @@ Note: It's important to follow the lab in the order exposed, each lab add a key 
 - 1 Slack account + 1 Slack channel
   - If you don't have one, give it a try: [https://slack.com/](https://slack.com/)
 - 1 Web Browser (Edge, Chrome or FireFox for example)
-  - **No local development or manipulation, all is done through your web browser.**
+  - **No local development or manipulation, all operations are done through your web browser.**

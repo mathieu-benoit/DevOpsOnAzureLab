@@ -6,21 +6,21 @@ Duration: 10 min
 
 ![Monitor - Overview](./imgs/Monitor-Overview.PNG)
 
-The goal of this lab is to discover the monitoring tools and the alert rules we have deployed throughout this lab and finally how to interact with the insights and how to display them. 
+The goal of this lab is to discover the monitoring tools and the alert rules we have deployed through the previous labs and finally how to interact with the insights and how to display them. 
 
 Best practices highlighted:
 
 - Get actionable insights through application performance and instant analytics
-- Get a dashboard to have an overview of some metrics regarding: VSTS Work/Build/Release and Application Insights
-- Automate the communication with your teammates through Slack notifications
+- Create a dashboard to have an overview of some metrics regarding: VSTS Work/Build/Release and Application Insights
+- Automate communications with your teammates through Slack notifications
 
 You will go through 3 main sections in this lab:
 
-- Browse the alert rules previously provisionned
-- Browse Azure Application Insights previously provisionned and linked your VSTS account on it to create an issue
+- Browse the alert rules previously provisioned
+- Browse Azure Application Insights previously provisioned and linked your VSTS account on it to create an issue
 - Customize your VSTS Dashboard
 
-## Browse the alert rules previously provisionned
+## Browse the alert rules previously provisioned
 
 1. Navigate to [https://portal.azure.com](https://portal.azure.com) where you should be able to see your Azure resources deployed:
 
@@ -32,7 +32,7 @@ You will go through 3 main sections in this lab:
 
 *Note: Not part of this lab, but other metrics could be configured and furthermore you could send email, SMS or setup a webhook to trigger some notifications, automations, etc.*
 
-## Browse Azure Application Insights previously provisionned and linked your VSTS account on it to create an issue
+## Browse Azure Application Insights previously provisioned and linked your VSTS account on it to create an issue
 
 3. Navigate to the `QA` Application Insights resource > **Overview** blade to see which metrics and insights you got:
 
@@ -74,10 +74,10 @@ You will go through 3 main sections in this lab:
 - Pull Requests
 - Release Definition Overview
 
-10. After some configuration you could have a new dashboard like that:
+10. After some configurations you could have a new dashboard similar to the following:
 
 ![VSTSDashboard - Customized](./imgs/VSTSDashboard-Customized.PNG)
 
-You are now all set for this lab. Let's now wrap up what we have seen throughout this lab and discuss what's next for your DevOps journey.
+Congratulations, you have successfully completed the labs. Let's review what we have seen throughout this lab and discuss what's next for your DevOps journey.
 
 Next lab: [Conclusion](../Conclusion/README.md)

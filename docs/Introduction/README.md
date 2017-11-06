@@ -1,14 +1,14 @@
 # Introduction
 
-## What's DevOps?
+## What are DevOps?
 
-![What's DevOps](./imgs/WhatsDevOps.PNG)
+![What are DevOps](./imgs/WhatsDevOps.PNG)
 
 ![The 3 Stage Conversation Of DevOps](./imgs/The3StageConversationOfDevOps.PNG)
 
 ![DevOps Lifecycle](./imgs/DevOpsLifecycle.PNG)
 
-Basic DevOps' toolchain:
+Basic DevOps' tool chain:
 
 - Code – Develop, Store, Merge, Distribute
 - Build – Branch, Tag, Deploy
