@@ -6,7 +6,7 @@ Duration: 30 min
 
 ![Develop - Build - Overview](./imgs/Develop-Build-Overview.PNG)
 
-The goal of this lab is to configure the different steps of the Continuous Integration (CI) process for a given web app through a VSTS Build Definition. The basic concepts of a CI phase is to expose different artifacts which will be used during the next Continuous Delivery (CD) phase. You will finally trigger 2 builds to see what will happen: manually and auto-triggered by a commit. 
+The goal of this lab is to configure the different steps of the *Continuous Integration (CI)* process for a given web app through a VSTS Build Definition. The basic concepts of a CI phase is to expose different artifacts which will be used during the next Continuous Delivery (CD) phase. Finally, you will trigger 2 builds to observe the process: One manually initiated and one auto-triggered by a commit. 
 
 Best practices highlighted:
 
@@ -15,9 +15,9 @@ Best practices highlighted:
 - Trigger CI at each commit into master branch
 - Validate code on feature-branch by pre-merging and building PR changes
 - Do code review through PR (comments, rejection, etc.)
-- Create a work item on build failure as bug in the backlog
+- Automatically create work items on build failures as bug in the backlog
 - Generate artifacts to be reused in a separate Continuous Delivery (CD) process
-- Automate the communication with your teammates through Slack notifications
+- Automate communications with your teammates through Slack notifications
 
 You will go through 4 main sections in this lab:
 
@@ -28,8 +28,9 @@ You will go through 4 main sections in this lab:
 
 ## Create the VSTS Build definition and expose the "app" artifact
 
-1. Go to your VSTS account `https://<yourvstsaccount.visualstudio.com` and open your VSTS project for this lab. *For the Agile Tour Quebec 2017, checkout your stiker.*
-2. Navigate to the **Build and Release** > **Build** tab and click on the **Import** button on the top right hand corner to import the file below. Copy/paste this path into the **File name** field and then click on **Open** and finally **Import**:
+0. Open a **new web browser instance in Incognito, Private or InPrivate mode** to avoid any signed-in session conflict.
+1. Go to your VSTS account `https://<yourvstsaccount.visualstudio.com` and open your VSTS project for this lab. *For the Agile Tour Quebec 2017, checkout your sticker.*
+2. Navigate to **Build and Release** > **Build** tab and click on the **Import** button on the top right hand corner to import the file below. Copy/paste this path into the **File name** field and then click on **Open** and finally **Import**:
 
 `
 https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/Lab%202%20-%20Continuous%20Integration/CI-BuildDefinition.json
@@ -37,11 +38,11 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
 
-3. Once the Build definition imported, you will land on the **Tasks** > **Process** step, change the **Name** field to `CI`:
+3. Once the Build definition has been imported, you will land on the **Tasks** > **Process** step, change the **Name** field to `CI`:
 
 ![VSTSBuild - Setup Definition](./imgs/VSTSBuild-SetupDefinition.PNG)
 
-4. Then, you will need to click on the **Get sources** step to "resolve" the error `Some settings need attention`. You don't have anything to do more than just click on this step to resolve the error.
+4. You will observe a `Some settings need attention` error. To resolve, click on the **Get sources**.
 
 ![VSTSBuild - Resolve Get Sources](./imgs/VSTSBuild-ResolveGetSources.PNG)
 
@@ -49,20 +50,21 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSBuild - CI Trigger](./imgs/VSTSBuild-CITrigger.PNG)
 
-6. Navigate to the **Options** tab of this Build definition page and enable the **Create work item on failure** and **Automatically link new work in this build** sections.
+6. Navigate to the **Options** tab of this Build definition page and enable the **Create work item on failure** and **Automatically link new work in this build** options.
 
 ![VSTSBuild - Create WorkItem On Failure](./imgs/VSTSBuild-CreateWorkItemOnFailure.PNG)
 
-7. Then click on the **Save & queue** toolbar button (top right hand corner). The **Save build definition and queue** will popup and just click on the **Save & queue** button.
-8. After ~2 min this build should failed because of a unit test failure:
+7. Click on the **Save & queue** toolbar button (top right hand corner). The **Save build definition and queue** will popup and just click on the **Save & queue** button.
+
+8. At this point the build has been started.  After ~2 min this build should failed because of a unit test failure:
 
 ![VSTSBuild - First Build Failed](./imgs/VSTSBuild-FirstBuildFailed.PNG)
 
-*Note: Here, if you did the associated setup in the previous lab, you should be able to see the 2 different notifications related to this failure in Slack: 1 for the Build failed in the `#build` channel and 1 other for the Work Item created in the `#work` channel.*
+*Note: If the notifications triggers in the previous lab were completed successfully, you should be able to see the 2 different notifications related to this failure in Slack: 1 for the Build failed in the `#build` channel and 1 other for the Work Item created in the `#work` channel.*
 
 ## Update the "master" branch policies to validate code by pre-merging and building PR changes
 
-9. Now we have a build definition created, let's adjust the `master` branch policies to reinforce quality check while creating and managing new Pull Request on branches. For that, go to the `master` branch policies page (like you did with the [previous lab](../Lab%201%20-%20Source%20control/README.md)) and click on the **Add build policy** to then select the `CI` Build definition we just created. Click on **Save** on the pop-up:
+9. Now we have a build definition created, let's adjust the `master` branch policies to reinforce quality check while creating and managing new Pull Request on branches; Go to the `master` branch policies page (as you did with the [previous lab](../Lab%201%20-%20Source%20control/README.md)) and click on the **Add build policy** to then select the `CI` Build definition we just created. Click on **Save** on the pop-up:
 
 ![VSTSCode - Build Policy On PR](./imgs/VSTSCode-BuildPolicyOnPR.PNG)
 
@@ -74,7 +76,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSCode  - Create New Branch](./imgs/VSTSCode-CreateNewBranch.PNG)
 
-12. Navigate to the `src/MainWebApplication/MainWebApplication/Services/AdditionService.cs` file on this `fix-add-method` branch. Click on the **Edit** button (top right hand corner) and then update the line 7 by replacing `return y + y;` by `return x + y;` (Yeah, big mistake! ;)). Click on the **Commit...** button (top right hand corner again) and on the **Commit** button once poped up.
+12. Navigate to the `src/MainWebApplication/MainWebApplication/Services/AdditionService.cs` file on this `fix-add-method` branch. Click on the **Edit** button (top right hand corner) and then update the line 7 by replacing `return y + y;` by `return x + y;` (Yeah, big mistake! ;)). Click on the **Commit...** button (top right hand corner again) and on the **Commit** button on the *Commit* dialog.
 
 ![VSTSCode - Edit And Commit Code](./imgs/VSTSCode-EditAndCommitCode.PNG)
 
@@ -90,7 +92,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSCode - Pull Request Overview](./imgs/VSTSCode-PullRequestOverview.PNG)
 
-16. Once the Build is completed successfuly (you are supposing to resolve the unit test issue in this PR, the build should pass), you will be able to **Complete** this PR. A new build will be triggered after the merge into master, it should be completed successfuly. Furthermore, you should see new Slack notifications (Code pushed + Build completed).
+16. Once the Build is completed successfully (now that you have resolved the unit test issue in this PR, the build should pass), you will be able to **Complete** this PR. A new build will be triggered after the merge into master, it should be completed successfully. Furthermore, you should see new Slack notifications (Code pushed + Build completed).
 
 ![VSTSCode - Complete Pull Request](./imgs/VSTSCode-CompletePullRequest.PNG)
 
@@ -104,11 +106,11 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSBuild - Import Tasks Group](./imgs/VSTSBuild-ImportTasksGroup.PNG)
 
-18. Once imported, just rename this Task Group as `ExposeInfraAndUITestsArtifacts` and you should see the 4 tasks preconfigured in it:
+18. Once imported, just rename this Task Group as `ExposeInfraAndUITestsArtifacts` and you should see the 4 tasks pre-configured:
 
 ![VSTSBuild - Tasks Group Imported](./imgs/VSTSBuild-TasksGroupImported.PNG)
 
-19. Go to the **Build and Release** > **Build** tab, and open your **CI** Build definition like illustrated below:
+19. Go to the **Build and Release** > **Build** tab, and open your **CI** Build definition as illustrated below:
 
  ![VSTSBuild - Edit Definition](./imgs/VSTSBuild-EditDefinition.PNG)
 

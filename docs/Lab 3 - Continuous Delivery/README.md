@@ -6,13 +6,13 @@ Duration: 25 min
 
 ![Delivery - Overview](./imgs/Delivery-Overview.PNG)
 
-The goal of this lab is to configure the different steps of the Continuous Delivery (CD) process for a given web app through a VSTS Release Definition. The basic concepts of a CD phase is to deploy the different artifacts exposed by the CI phase: deploy the `infra` artifact, then the `app` artifact to finally run the `ui-tests` artifact on the different environements: `DEV`, `QA`, etc. You will finally trigger the release to be able then to browse the web app endpoints deployed. 
+The goal of this lab is to configure the different steps of the Continuous Delivery (CD) process for a given web app through a VSTS *Release Definition*. The basic concepts of the CD phase is to deploy the different artifacts exposed by the CI phase: deploy the `infra` artifact, then the `app` artifact to finally run the `ui-tests` artifact on the different environments: `DEV`, `QA`, etc. You will finally trigger the release to be able then to browse the web app endpoints deployed. 
 
 Best practices highlighted:
 
 - Import Release Definition ("as code") provided by the "Ops" team
 - Use a dedicated version of the CI's artifacts (latest by default)
-- Use Azure ARM Templates as Infrastructue-as-code exposed by the "Ops" team
+- Use Azure ARM Templates as Infrastructure-as-code exposed by the "Ops" team
 - Store settings on the server - defined in the ARM Templates
 - Run UITests (Selenium)
 - Auto-trigger the CD when the associated CI is completed
@@ -34,10 +34,10 @@ You will go through 5 main sections in this lab:
 
 - Go to your VSTS account `https://<yourvstsaccount>.visualstudio.com` and open your VSTS project for this lab
 - Install the CheckUrl extension - https://marketplace.visualstudio.com/items?itemName=saeidbabaei.checkUrl
-- Configure an Azure Resource Manager endpoint for example with the name `Azure Paas - Connection`:
+- Configure an Azure Resource Manager endpoint for example with the name `Azure Pass - Connection`:
 
 Note: after the creation of this endpoint an Azure user is created as `Contributor`. Azure Resource Group policies and lock will be applied later on this lab and because the `Contributor` role doesn't have write rights on `Microsoft.Authorization/locks/`, `Microsoft.Authorization/policydefinitions/` or `Microsoft.Authorization/policyassignments/`, so:
-- either you add these right to the associated user via the Azure portal;
+- either you add these rights to the associated user via the Azure portal;
 - or you disable the 3 associated tasks in the `QA-staging` Environment.
 
 ![VSTSRelease - Configure ARM Endpoint](./imgs/VSTSRelease-ConfigureARMEndpoint.PNG)
@@ -55,19 +55,20 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 - After the import, rename the Release definition as `CD` and go to the **Tasks** tab of this Release definition and apply the actions below for each Environment: `DEV`, `QA-staging`, `QA`, `Rollback QA`, `Delete QA` and `Delete DEV`:
   - Set the **Agent queue** of the **Run on agent** step to `Hosted VS2017`
-  - Set the **Azure subscription** of the first step **Deployment process** to `Azure Paas - Connection`
+  - Set the **Azure subscription** of the first step **Deployment process** to `Azure Pass - Connection`
 
 ![VSTSRelease - Update Definition Imported](./imgs/VSTSRelease-UpdateDefinitionImported.PNG)
 
 ## Edit and customize the imported Release definition
 
-1. Go to your VSTS account `https://<yourvstsaccount>.visualstudio.com` and open your VSTS project for this lab
+0. Open a **new web browser instance in Incognito, Private or InPrivate mode** to avoid any signed-in session conflict.
+1. Go to your VSTS account `https://<yourvstsaccount.visualstudio.com` and open your VSTS project for this lab. *For the Agile Tour Quebec 2017, checkout your sticker.*
 
 2. Navigate to the **Build and Release** > **Release** tab and click on the **Edit** action:
 
 ![VSTSRelease - Open Release Definition](./imgs/VSTSRelease-OpenReleaseDefinition.PNG)
 
-3. Go to the **Variables** tab of this Release definition and change the value of the `AppServiceName` variable to your correct and unique username, for example: `atq2017devopsXX`. This name should be unique otherwise it will failed while deploying the Azure Web App.
+3. Go to the **Variables** tab of this Release definition and change the value of the `AppServiceName` variable to your correct and unique username, for example: `atq2017devops<YourName>`. **This name is required be unique** otherwise it will fail to deploy as an Azure Web App.
 
 ![VSTSRelease - Update Variables](./imgs/VSTSRelease-UpdateVariables.PNG)
 
@@ -85,7 +86,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 7. On the **Rollback QA** Environment do the exact same setup.
 
-8. On the same **Pre-deployment conditions** setup page of the **Rollback QA** Environment, change the trigger type to `After environment` and select the `QA` Environement:
+8. On the same **Pre-deployment conditions** setup page of the **Rollback QA** Environment, change the trigger type to `After environment` and select the `QA` Environment:
 
 ![VSTS Release - After QA Environment](./imgs/VSTSRelease-AfterQAEnvironment.PNG)
 
@@ -97,7 +98,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSRelease - Manually Trigger Release Confirmation](./imgs/VSTSRelease-ManuallyTriggerReleaseConfirmation.PNG)
 
-*Note: the duration of this release should take ~6 min. By waiting you could go to the next section to explore the different tasks of this Release definition.*
+*Note: the duration of this release should take ~6 min. During this wait, go to the next section to explore the different tasks of this Release definition.*
 
 ## Let's explore the tasks/steps of these environments
 
@@ -131,7 +132,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSRelease - Open Latest Run](./imgs/VSTSRelease-OpenLatestRun.PNG)
 
-18. Once `DEV` and `QA-staging` are successfuly deployed, you should be able to clik on **Approve or Reject** and then **Approve** to deploy `QA`:
+18. Once `DEV` and `QA-staging` are successfully deployed, you should be able to click on **Approve or Reject** and then **Approve** to deploy `QA`:
 
 ![VSTSRelease - Succeeded Summary](./imgs/VSTSRelease-SucceededSummary.PNG)
 
