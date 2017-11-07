@@ -1,4 +1,4 @@
-Previous lab: [Lab 5 - Decoupling with Microservices](../Lab%205%20-%20Decoupling%20with%20Microservices/README.md)
+Previous lab: [Lab 4 - Monitor and Learn](../Lab%204%20-%20Monitor%20and%20Learn/README.md)
 
 # Conclusion
 
