@@ -52,7 +52,7 @@ Note: this GitHub repository you are importing contains a sample ASP.NET Core we
 
 10. Once the result page is displayed ("New integration added!"),  copy the **WebHook URL** field value `https://hooks.slack.com/services/...` to be used with the next steps. 
 
-11. Click the **Gear** icon and navigate to the **Service Hooks** page of your VSTS project and from there click on the **Create a new subscription** button as illustrated below.
+11. Go back to your VSTS project and click the **Gear** icon and navigate to the **Service Hooks** page and from there click on the **Create a new subscription** button as illustrated below.
 
 ![ServiceHooks - Notification To Slack - Setup](./imgs/ServiceHooks-NotificationToSlack-Setup.PNG)
 
