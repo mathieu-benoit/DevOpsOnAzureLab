@@ -2,7 +2,7 @@ Previous lab: [Introduction](../Introduction/README.md)
 
 # Lab 1 - Source control
 
-Duration: 15 min
+Duration: 10 min
 
 The goal of this lab is to setup a Git source control with VSTS by importing an existing GitHub repository having a sample ASP.NET Core web application. 
 

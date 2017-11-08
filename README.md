@@ -7,7 +7,7 @@ Total duration of this lab: 90 min
 ## Agenda of this lab
 
 1. [Introduction (15min)](./docs/Introduction/README.md)
-2. [Lab 1 - Source control (15min)](./docs/Lab%201%20-%20Source%20control/README.md)
+2. [Lab 1 - Source control (10min)](./docs/Lab%201%20-%20Source%20control/README.md)
 3. [Lab 2 - Continuous Integration (30min)](./docs/Lab%202%20-%20Continuous%20Integration/README.md)
 4. [Lab 3 - Continuous Delivery (25min)](./docs/Lab%203%20-%20Continuous%20Delivery/README.md)
 5. [Lab 4 - Monitor and Learn (10min)](../Lab%204%20-%20Monitor%20and%20Learn/README.md)
