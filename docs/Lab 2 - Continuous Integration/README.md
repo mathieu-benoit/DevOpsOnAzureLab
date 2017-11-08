@@ -38,7 +38,7 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
 
-3. Once the Build definition has been imported, you will land on the **Tasks** > **Process** step, change the **Name** field to `CI`:
+3. Once the Build definition has been imported, you will land on the **Tasks** > **Process** step, change the **Name** field to `CI` and choose the correct `Hosted VS2017` value for the **Agent queue** field (otherwise you will get an error while saving and queueing your build):
 
 ![VSTSBuild - Setup Definition](./imgs/VSTSBuild-SetupDefinition.PNG)
 
