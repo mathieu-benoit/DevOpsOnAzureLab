@@ -68,37 +68,35 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSCode - Build Policy On PR](./imgs/VSTSCode-BuildPolicyOnPR.PNG)
 
-10. Then, click on the **Save changes** toolbar button at the top of this page.
-
 ## Fix the unit test issue by submitting a new pull request
 
-11. Go to the VSTS **Work** main tab to create a new branch based on the `master` branch. Click on **New branch** action and name it as `fix-add-method` and then click on the **Create branch** button:
+10. Go to the VSTS **Work** main tab to create a new branch based on the `master` branch. Click on **New branch** action and name it as `fix-add-method` and then click on the **Create branch** button:
 
 ![VSTSCode  - Create New Branch](./imgs/VSTSCode-CreateNewBranch.PNG)
 
-12. Navigate to the `src/MainWebApplication/MainWebApplication/Services/AdditionService.cs` file on this `fix-add-method` branch. Click on the **Edit** button (top right hand corner) and then update the line 7 by replacing `return y + y;` by `return x + y;` (Yeah, big mistake! ;)). Click on the **Commit...** button (top right hand corner again) and on the **Commit** button on the *Commit* dialog.
+11. Navigate to the `src/MainWebApplication/MainWebApplication/Services/AdditionService.cs` file on this `fix-add-method` branch. Click on the **Edit** button (top right hand corner) and then update the line 7 by replacing `return y + y;` by `return x + y;` (Yeah, big mistake! ;)). Click on the **Commit...** button (top right hand corner again) and on the **Commit** button on the *Commit* dialog.
 
 ![VSTSCode - Edit And Commit Code](./imgs/VSTSCode-EditAndCommitCode.PNG)
 
-13. You will be invited to create a Pull Request based on this commit on this branch. Let's proceed to land on the **New Pull Request** page:
+12. You will be invited to create a Pull Request based on this commit on this branch. Let's proceed to land on the **New Pull Request** page:
 
 ![VSTSCode - Create Pull Request](./imgs/VSTSCode-CreatePullRequest.PNG)
 
-14. As a PR/code review, comment the line updated on the right hand side:
+13. As a PR/code review, comment the line updated on the right hand side:
 
 ![VSTSCode - PR Code Review](./imgs/VSTSCode-PRCodeReview.PNG)
 
-15. On the **Overview** tab of this PR you should see the status of the current policies: 1 Build should be in progress and **Not all comments resolved**. By waiting the end of the current build, let's **Resolve** the comment:
+14. On the **Overview** tab of this PR you should see the status of the current policies: 1 Build should be in progress and **Not all comments resolved**. By waiting the end of the current build, let's **Resolve** the comment:
 
 ![VSTSCode - Pull Request Overview](./imgs/VSTSCode-PullRequestOverview.PNG)
 
-16. Once the Build is completed successfully (now that you have resolved the unit test issue in this PR, the build should pass), you will be able to **Complete** this PR. A new build will be triggered after the merge into master, it should be completed successfully. Furthermore, you should see new Slack notifications (Code pushed + Build completed).
+15. Once the Build is completed successfully (now that you have resolved the unit test issue in this PR, the build should pass), you will be able to **Complete** this PR. A new build will be triggered after the merge into master, it should be completed successfully. Furthermore, you should see new Slack notifications (Code pushed + Build completed).
 
 ![VSTSCode - Complete Pull Request](./imgs/VSTSCode-CompletePullRequest.PNG)
 
 ## Import tasks group to expose the "infra" and "ui-tests" artifacts
 
-17. Navigate to the **Build and Release** > **Task Groups** tab and click on the **Import** button on the top left hand corner to import the file below. Copy/paste this path into the **File name** field and then click on **Open** and finally **Import**:
+16. Navigate to the **Build and Release** > **Task Groups** tab and click on the **Import** button on the top left hand corner to import the file below. Copy/paste this path into the **File name** field and then click on **Open** and finally **Import**:
 
 `
 https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/Lab%202%20-%20Continuous%20Integration/ExposeInfraAndUITestsArtifacts-TaskGroupDefinition.json
@@ -106,19 +104,19 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSBuild - Import Tasks Group](./imgs/VSTSBuild-ImportTasksGroup.PNG)
 
-18. Once imported, just rename this Task Group as `ExposeInfraAndUITestsArtifacts` and you should see the 4 tasks pre-configured:
+17. Once imported, just rename this Task Group as `ExposeInfraAndUITestsArtifacts` and you should see the 4 tasks pre-configured:
 
 ![VSTSBuild - Tasks Group Imported](./imgs/VSTSBuild-TasksGroupImported.PNG)
 
-19. Go to the **Build and Release** > **Build** tab, and open your **CI** Build definition as illustrated below:
+18. Go to the **Build and Release** > **Build** tab, and open your **CI** Build definition as illustrated below:
 
  ![VSTSBuild - Edit Definition](./imgs/VSTSBuild-EditDefinition.PNG)
 
-20. Add an instance of the Tasks Group just imported. Once added, let's rename this step as `Expose "infra" and "ui-tests" Artifacts`:
+19. Add an instance of the Tasks Group just imported. Once added, let's rename this step as `Expose "infra" and "ui-tests" Artifacts`:
 
 ![VSTSBuild - Add Tasks Group](./imgs/VSTSBuild-AddTasksGroup.PNG)
 
-21. **Save and Queue** this build. Once it will be successfully completed you should see the 3 artifacts below and should see the Slack notifications as well:
+20. **Save and Queue** this build. Once it will be successfully completed you should see the 3 artifacts below and should see the Slack notifications as well:
 
 ![VSTSBuild - Artifacts](./imgs/VSTSBuild-Artifacts.PNG)
 
