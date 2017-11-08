@@ -17,7 +17,7 @@ namespace MainWebApplicationSeleniumTests
 
             //Assert
             Assert.AreEqual("Home Page - MainWebApplication", Driver.Title);
-            Assert.AreEqual(homepageUrl, Driver.Url);
+            Assert.AreEqual(homepageUrl.ToLower(), Driver.Url);
         }
     }
 }
