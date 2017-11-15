@@ -91,11 +91,17 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTS Release - After QA Environment](./imgs/VSTSRelease-AfterQAEnvironment.PNG)
 
-9. **Save** your changes and then let's manually trigger **Release** > **Create release** now we are ready:
+9. On the **QA** Environment, click on its right side to customize its **Post-deployment conditions** and **Enabled** the **Gates** section, change the **Delay before evaluation** to `1 Minutes` and finally select `Shared Queries > Current Iteration > Active Bugs` for the **Query** field:
+
+*Note: You may need to activate this preview feature for your VSTS account and [check out all the capabilities of this feature](https://docs.microsoft.com/en-us/vsts/build-release/concepts/definitions/release/approvals/gates).*
+
+![VSTSRelease - Gates](./imgs/VSTSRelease-Gates.PNG)
+
+10. **Save** your changes and then let's manually trigger **Release** > **Create release** now we are ready:
 
 ![VSTSRelease - Manually Trigger Release](./imgs/VSTSRelease-ManuallyTriggerRelease.PNG)
 
-10. Leave the default information and just click on the **Create** button:
+11. Leave the default information and just click on the **Create** button:
 
 ![VSTSRelease - Manually Trigger Release Confirmation](./imgs/VSTSRelease-ManuallyTriggerReleaseConfirmation.PNG)
 
@@ -103,65 +109,65 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ## Let's explore the tasks/steps of these environments
 
-11. DEV
+12. DEV
 
 ![VSTSRelease - DEV](./imgs/VSTSRelease-DEV.PNG)
 
-12. QA-Staging
+13. QA-Staging
 
 ![VSTSRelease - QA-Staging](./imgs/VSTSRelease-QAStaging.PNG)
 
-13. QA
+14. QA
 
 ![VSTSRelease - QA](./imgs/VSTSRelease-QA.PNG)
 
-14. Rollback QA
+15. Rollback QA
 
 ![VSTSRelease - Rollback QA](./imgs/VSTSRelease-RollbackQA.PNG)
 
-15. Delete QA
+16. Delete QA
 
 ![VSTSRelease - Delete QA](./imgs/VSTSRelease-DeleteQA.PNG)
 
-16. Delete DEV
+17. Delete DEV
 
 ![VSTSRelease - Delete DEV](./imgs/VSTSRelease-DeleteDEV.PNG)
 
 ## Approve manually the deployment from "QA-staging" to "QA"
 
-17. Navigate to **Build and Release** > **Release**, select your `CD` and double click on the latest Release executed (the one you manually triggered earlier):
+18. Navigate to **Build and Release** > **Release**, select your `CD` and double click on the latest Release executed (the one you manually triggered earlier):
 
 ![VSTSRelease - Open Latest Run](./imgs/VSTSRelease-OpenLatestRun.PNG)
 
-18. Once `DEV` and `QA-staging` are successfully deployed, you should be able to click on **Approve or Reject** and then **Approve** to deploy `QA`:
+19. Once `DEV` and `QA-staging` are successfully deployed, you should be able to click on **Approve or Reject** and then **Approve** to deploy `QA`:
 
 ![VSTSRelease - Succeeded Summary](./imgs/VSTSRelease-SucceededSummary.PNG)
 
 ## Browse the Azure resources and enable a feature-flag
 
-19. Navigate to [https://portal.azure.com](https://portal.azure.com) where you should be able to see your Azure resources deployed:
+20. Navigate to [https://portal.azure.com](https://portal.azure.com) where you should be able to see your Azure resources deployed:
 
 ![Azure - All Resources](./imgs/Azure-AllResources.PNG)
 
-20. Navigate to the `QA` Azure Web App > **Overview** blade to see the homepage of the web app you have deployed on it (it will open a new web browser tab):
+21. Navigate to the `QA` Azure Web App > **Overview** blade to see the homepage of the web app you have deployed on it (it will open a new web browser tab):
 
 ![Azure - Browse Web App](./imgs/Azure-BrowseWebApp.PNG)
 
-21. On your web browser tab just opened, you should land on the homepage. To generate some insights hit "F5" many times on the different pages: **Home**, **About** and **Contact**. 
+22. On your web browser tab just opened, you should land on the homepage. To generate some insights hit "F5" many times on the different pages: **Home**, **About** and **Contact**. 
 
-22. Make sure you browse the **About** page, you should get an error (we will use that during the next lab):
+23. Make sure you browse the **About** page, you should get an error (we will use that during the next lab):
 
 ![WebApp - Browse About Page](./imgs/WebApp-BrowseAboutPage.PNG)
 
-23. On the Azure portal, navigate to the `QA` Azure Web App > **Application settings** blade to change the feature-flat `MainWebApplication:EnableRandomAdditionFeature` to `true`, save your change:
+24. On the Azure portal, navigate to the `QA` Azure Web App > **Application settings** blade to change the feature-flat `MainWebApplication:EnableRandomAdditionFeature` to `true`, save your change:
 
 ![WebApp - App Settings](./imgs/WebApp-AppSettings.PNG)
 
-24. Browse and refresh your `QA`'s homepage, a new menu entry `Random Addition` should appear, click on it:
+25. Browse and refresh your `QA`'s homepage, a new menu entry `Random Addition` should appear, click on it:
 
 ![WebApp - Browse Random Addition Feature](./imgs/WebApp-BrowseRandomAdditionFeature.PNG)
 
-25. You could change back the value of the feature-flag `MainWebApplication:EnableRandomAdditionFeature` to `false` and see that the menu will disapear.
+26. You could change back the value of the feature-flag `MainWebApplication:EnableRandomAdditionFeature` to `false` and see that the menu will disapear.
 
 *Note: Not part of this lab, but like you can see this web application follow the "Monolythic spirit" since we have on the same web host: the web app with the front-end/back-end but the APIs as well (in our case the RandomAddition API). What you could do and think about is moving this API with a Microservice with an autonomous lifecycle process (code repository, build/release pipeline, etc.) independently of the web app. You could for example host your API in a Container, a Serverless, etc. approach, expose a REST API endpoint and change the app settings `MainWebApplication:EnableRandomAdditionFeature`.*
 

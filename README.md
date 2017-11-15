@@ -25,3 +25,8 @@ Note: It's important to follow the lab in the order exposed, each lab add a key 
   - If you don't have one, give it a try: [https://slack.com/](https://slack.com/)
 - 1 Web Browser (Edge, Chrome or FireFox for example)
   - **No local development or manipulation, all operations are done through your web browser.**
+
+## History of changes
+
+- 2017-11-15 - Add Gates in the Release pipeline - [PR#5](https://github.com/mathieu-benoit/DevOpsOnAzureLab/pull/5)
+- 2017-11-07 - Initial lab for the Agile Tour Quebec 2017
