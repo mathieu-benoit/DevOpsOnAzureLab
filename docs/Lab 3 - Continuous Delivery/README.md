@@ -95,6 +95,8 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 *Note: You may need to activate this preview feature for your VSTS account and [check out all the capabilities of this feature](https://docs.microsoft.com/en-us/vsts/build-release/concepts/definitions/release/approvals/gates).*
 
+![VSTSRelease - Gates](./imgs/VSTSRelease-Gates.PNG)
+
 10. **Save** your changes and then let's manually trigger **Release** > **Create release** now we are ready:
 
 ![VSTSRelease - Manually Trigger Release](./imgs/VSTSRelease-ManuallyTriggerRelease.PNG)
