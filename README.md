@@ -28,5 +28,5 @@ Note: It's important to follow the lab in the order exposed, each lab add a key 
 
 ## History of changes
 
-- 2017-11-15 - Add Gates in the Release pipeline - [PR#]()
+- 2017-11-15 - Add Gates in the Release pipeline - [PR#5](https://github.com/mathieu-benoit/DevOpsOnAzureLab/pull/5)
 - 2017-11-07 - Initial lab for the Agile Tour Quebec 2017
