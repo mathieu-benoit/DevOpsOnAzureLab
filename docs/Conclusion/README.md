@@ -54,6 +54,7 @@ Previous lab: [Lab 4 - Monitor and Learn](../Lab%204%20-%20Monitor%20and%20Learn
 - [Journey to Cloud Cadence](https://www.youtube.com/watch?v=Lprj_4Wpi2s)
 - [VSTS: From Monolith to Cloud Service](https://www.youtube.com/watch?v=9frodP5xLxk)
 - [Agile at Microsoft](https://www.youtube.com/watch?v=-LvCJpnNljU)
+- [Git at Scale at Microsoft](https://www.visualstudio.com/learn/git-at-scale/)
 - [Windows - The largest Git repo on the planet](https://blogs.msdn.microsoft.com/bharry/2017/05/24/the-largest-git-repo-on-the-planet/)
 - [DevOps Checklist](https://docs.microsoft.com/en-us/azure/architecture/checklist/dev-ops)
 - [Visual Studio Team Services- Hands-on-Labs](https://almvm.azurewebsites.net/labs/vsts/)
