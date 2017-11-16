@@ -49,7 +49,7 @@ Note: after the creation of this endpoint an Azure user is created as `Contribut
 *Note: if you don't have any Release definition yet, you should create an empty Release definition first to have access to the import feature.*
 
 `
-https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/Lab%203%20-%20Continuous%20Delivery/CD.json
+https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/src/MainWebApplication/MainWebApplicationVsts/CD.json
 `
 
 ![VSTSRelease - Import Definition](./imgs/VSTSRelease-ImportDefinition.PNG)
