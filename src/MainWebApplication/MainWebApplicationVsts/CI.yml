@@ -1,0 +1,60 @@
+queue: Hosted VS2017
+variables:
+  RestoreBuildProjects: "src/MainWebApplication/MainWebApplication/MainWebApplication.csproj\nsrc/MainWebApplication/MainWebApplicationUnitTests/MainWebApplicationUnitTests.csproj"
+  BuildConfiguration: release
+steps:
+#web app
+- task: dotNetCoreCLI@1
+  inputs:
+    command: restore
+    projects: $(RestoreBuildProjects)
+  displayName: dotnet restore
+- task: dotNetCoreCLI@1
+  inputs:
+    command: build
+    projects: $(RestoreBuildProjects)
+    arguments: --configuration $(BuildConfiguration)
+  displayName: dotnet build
+- task: dotNetCoreCLI@1
+  inputs:
+    command: test 
+    projects: "**/*UnitTests/*.csproj"
+    arguments: --configuration $(BuildConfiguration)
+  displayName: dotnet test
+- task: dotNetCoreCLI@1
+  inputs:
+    command: publish
+    arguments: --configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)
+    zipAfterPublish: true
+  displayName: dotnet publish
+- task: publishBuildArtifacts@1
+  inputs:
+    PathtoPublish: $(Build.ArtifactStagingDirectory)
+    ArtifactName: app
+    ArtifactType: Container
+  displayName: "Publish artifact: app"
+#infra
+- task: publishBuildArtifacts@1
+  inputs:
+    PathtoPublish: "src/MainWebApplication/MainWebApplicationAzureResourceGroup"
+    ArtifactName: infra
+    ArtifactType: Container
+  displayName: "Publish artifact: infra"
+#ui-tests
+- task: NuGetCommand@0
+  inputs:
+    command: restore 
+    solution: "src/MainWebApplication/MainWebApplicationSeleniumTests/packages.config"
+    nuGetRestoreArgs: "-PackagesDirectory $(System.DefaultWorkingDirectory)/src/MainWebApplication/packages"
+  displayName: "NuGet restore (UITests)"
+- task: MSBuild@1
+  inputs:
+    solution: "src/MainWebApplication/MainWebApplicationSeleniumTests/MainWebApplicationSeleniumTests.csproj"
+    configuration: $(BuildConfiguration)
+  displayName: "Build UITests"
+- task: publishBuildArtifacts@1
+  inputs:
+    PathtoPublish: "$(build.sourcesdirectory)/src/MainWebApplication/MainWebApplicationSeleniumTests/bin/$(BuildConfiguration)"
+    ArtifactName: ui-tests
+    ArtifactType: Container
+  displayName: "Publish artifact: ui-tests"

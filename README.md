@@ -2,13 +2,13 @@
 
 This *DevOps on Microsoft Azure lab* is designed as a step-by-step guide to demonstrate how you could add DevOps practices for any of your current projects. We are illustrating this lab with a sample ASP.NET Core web app hosted on Azure App Service (Web App) with Application Insights all of which is orchestrated by Visual Studio Team Services (VSTS).
 
-Total duration of this lab: 90 min
+Total duration of this lab: 80 min
 
 ## Agenda of this lab
 
 1. [Introduction (15min)](./docs/Introduction/README.md)
 2. [Lab 1 - Source control (10min)](./docs/Lab%201%20-%20Source%20control/README.md)
-3. [Lab 2 - Continuous Integration (30min)](./docs/Lab%202%20-%20Continuous%20Integration/README.md)
+3. [Lab 2 - Continuous Integration (20min)](./docs/Lab%202%20-%20Continuous%20Integration/README.md)
 4. [Lab 3 - Continuous Delivery (25min)](./docs/Lab%203%20-%20Continuous%20Delivery/README.md)
 5. [Lab 4 - Monitor and Learn (10min)](../Lab%204%20-%20Monitor%20and%20Learn/README.md)
 7. [Conclusion (15min)](./docs/Conclusion/README.md)

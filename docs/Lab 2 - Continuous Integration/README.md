@@ -2,7 +2,7 @@ Previous lab: [Lab 1 - Source control](../Lab%201%20-%20Source%20control/README.
 
 # Lab 2 - Continuous Integration
 
-Duration: 30 min
+Duration: 20 min
 
 ![Develop - Build - Overview](./imgs/Develop-Build-Overview.PNG)
 
@@ -10,7 +10,7 @@ The goal of this lab is to configure the different steps of the *Continuous Inte
 
 Best practices highlighted:
 
-- Import Build Definition and Task Group from files ("as code") provided by the "Ops" team
+- Import Build Definition from YAML file ("as code") provided by the "Ops" team
 - Integrate unit tests during the CI process
 - Trigger CI at each commit into master branch
 - Validate code on feature-branch by pre-merging and building PR changes
@@ -19,44 +19,40 @@ Best practices highlighted:
 - Generate artifacts to be reused in a separate Continuous Delivery (CD) process
 - Automate communications with your teammates through Slack notifications
 
-You will go through 4 main sections in this lab:
+You will go through 3 main sections in this lab:
 
-- Create/Import the VSTS Build definition and expose the "app" artifact
-- Update the "master" branch policies to validate code by pre-merging and building PR changes
+- Create/Import the VSTS Build definition and expose the `app`, `infra` and `ui-tests` artifact
+- Update the `master` branch policies to validate code by pre-merging and building PR changes
 - Fix the unit test issue by submitting a new pull request
-- Import tasks group to expose the "infra" and "ui-tests" artifacts
 
-## Create the VSTS Build definition and expose the "app" artifact
+## Create the VSTS Build definition and expose the "app", "infra" and "ui-tests" artifacts
 
-0. Open a **new web browser instance in Incognito, Private or InPrivate mode** to avoid any signed-in session conflict.
-1. Go to your VSTS account `https://<yourvstsaccount.visualstudio.com` and open your VSTS project for this lab. *For the Agile Tour Quebec 2017, checkout your sticker.*
-2. Navigate to **Build and Release** > **Build** tab and click on the **Import** button on the top right hand corner to import the file below. Copy/paste this path into the **File name** field and then click on **Open** and finally **Import**:
-
-`
-https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/Lab%202%20-%20Continuous%20Integration/CI-BuildDefinition.json
-`
+1. Open a **new web browser instance in Incognito, Private or InPrivate mode** to avoid any signed-in session conflict.
+2. Go to your VSTS account `https://<yourvstsaccount.visualstudio.com` and open your VSTS project for this lab.
+  - *Note: with the step below you will need to activate the `Build YAML definitions` preview features for your VSTS account.*
+3. Navigate to **Build and Release** > **Build** tab and click on the **New definition** or **New** button and select the template: `Config as code` > `YAML` and click on the **Apply** button:
 
 ![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)
 
-3. Once the Build definition has been imported, you will land on the **Tasks** > **Process** step, change the **Name** field to `CI` and choose the correct `Hosted VS2017` value for the **Agent queue** field (otherwise you will get an error while saving and queueing your build):
+4. You will land on the **Yaml** > **Process** step:
+  - Change the **Name** field to `CI`
+  - Choose the correct `Hosted VS2017` value for the **Agent queue** field (otherwise you will get an error while saving and queueing your build)
+  - Set the **Yaml path** field value to `src/MainWebApplication/MainWebApplicationVsts/CI.yml`
+    - *Note: you could look at this file to see how is defined the Build definition as code.*
 
 ![VSTSBuild - Setup Definition](./imgs/VSTSBuild-SetupDefinition.PNG)
-
-4. You will observe a `Some settings need attention` error. To resolve, click on the **Get sources**.
-
-![VSTSBuild - Resolve Get Sources](./imgs/VSTSBuild-ResolveGetSources.PNG)
 
 5. Navigate to the **Triggers** tab of this Build definition page and enable the **Trigger status** of the **Continuous Integration** section.
 
 ![VSTSBuild - CI Trigger](./imgs/VSTSBuild-CITrigger.PNG)
 
-6. Navigate to the **Options** tab of this Build definition page and enable the **Create work item on failure** and **Automatically link new work in this build** options.
+6. *(You could skip this step because YAML Definition doesn't support yet it)* Navigate to the **Options** tab of this Build definition page and enable the **Create work item on failure** and **Automatically link new work in this build** options.
 
 ![VSTSBuild - Create WorkItem On Failure](./imgs/VSTSBuild-CreateWorkItemOnFailure.PNG)
 
 7. Click on the **Save & queue** toolbar button (top right hand corner). The **Save build definition and queue** will popup and just click on the **Save & queue** button.
 
-8. At this point the build has been started.  After ~2 min this build should failed because of a unit test failure:
+8. At this point the build has been started. After ~2 min this build should failed because of a unit test failure:
 
 ![VSTSBuild - First Build Failed](./imgs/VSTSBuild-FirstBuildFailed.PNG)
 
@@ -90,33 +86,11 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/La
 
 ![VSTSCode - Pull Request Overview](./imgs/VSTSCode-PullRequestOverview.PNG)
 
-15. Once the Build is completed successfully (now that you have resolved the unit test issue in this PR, the build should pass), you will be able to **Complete** this PR. A new build will be triggered after the merge into master, it should be completed successfully. Furthermore, you should see new Slack notifications (Code pushed + Build completed).
+15. Once the Build is completed successfully (now that you have resolved the unit test issue in this PR, the build should pass), you will be able to **Complete** this PR:
 
 ![VSTSCode - Complete Pull Request](./imgs/VSTSCode-CompletePullRequest.PNG)
 
-## Import tasks group to expose the "infra" and "ui-tests" artifacts
-
-16. Navigate to the **Build and Release** > **Task Groups** tab and click on the **Import** button on the top left hand corner to import the file below. Copy/paste this path into the **File name** field and then click on **Open** and finally **Import**:
-
-`
-https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/docs/Lab%202%20-%20Continuous%20Integration/ExposeInfraAndUITestsArtifacts-TaskGroupDefinition.json
-`
-
-![VSTSBuild - Import Tasks Group](./imgs/VSTSBuild-ImportTasksGroup.PNG)
-
-17. Once imported, just rename this Task Group as `ExposeInfraAndUITestsArtifacts` and you should see the 4 tasks pre-configured:
-
-![VSTSBuild - Tasks Group Imported](./imgs/VSTSBuild-TasksGroupImported.PNG)
-
-18. Go to the **Build and Release** > **Build** tab, and open your **CI** Build definition as illustrated below:
-
- ![VSTSBuild - Edit Definition](./imgs/VSTSBuild-EditDefinition.PNG)
-
-19. Add an instance of the Tasks Group just imported. Once added, let's rename this step as `Expose "infra" and "ui-tests" Artifacts`:
-
-![VSTSBuild - Add Tasks Group](./imgs/VSTSBuild-AddTasksGroup.PNG)
-
-20. **Save and Queue** this build. Once it will be successfully completed you should see the 3 artifacts below and should see the Slack notifications as well:
+20. A new build will be triggered after the merge into `master` branch, it should be completed successfully and you should see the 3 artifacts below. Furthermore, you should see new Slack notifications (Code pushed + Build completed) as well.
 
 ![VSTSBuild - Artifacts](./imgs/VSTSBuild-Artifacts.PNG)
 
