@@ -1,6 +1,6 @@
 Previous lab: [Lab 3 - Continuous Delivery](../Lab%203%20-%20Continuous%20Delivery/README.md)
 
-# Lab 4 - Monitor and Learn
+# Lab 4 - Continuous Monitoring (CM)
 
 Duration: 10 min
 

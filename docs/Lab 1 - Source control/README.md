@@ -1,6 +1,6 @@
 Previous lab: [Introduction](../Introduction/README.md)
 
-# Lab 1 - Source control
+# Lab 1 - Source control (SC)
 
 Duration: 10 min
 

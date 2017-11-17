@@ -1,6 +1,6 @@
 Previous lab: [Lab 2 - Continuous Integration](../Lab%202%20-%20Continuous%20Integration/README.md)
 
-# Lab 3 - Continuous Delivery
+# Lab 3 - Continuous Delivery (CD)
 
 Duration: 25 min
 

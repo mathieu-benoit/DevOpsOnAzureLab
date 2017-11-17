@@ -1,6 +1,6 @@
 Previous lab: [Lab 1 - Source control](../Lab%201%20-%20Source%20control/README.md)
 
-# Lab 2 - Continuous Integration
+# Lab 2 - Continuous Integration (CI)
 
 Duration: 20 min
 
