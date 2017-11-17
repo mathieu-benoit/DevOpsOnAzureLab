@@ -1,4 +1,4 @@
-Previous lab: [Lab 4 - Monitor and Learn](../Lab%204%20-%20Monitor%20and%20Learn/README.md)
+Previous lab: [Lab 4 - Continuous Monitoring](../Lab%204%20-%20Continuous%20Monitoring/README.md)
 
 # Conclusion
 

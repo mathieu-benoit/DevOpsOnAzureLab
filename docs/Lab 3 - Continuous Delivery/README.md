@@ -173,4 +173,4 @@ https://raw.githubusercontent.com/mathieu-benoit/DevOpsOnAzureLab/master/src/Mai
 
 You are now all set for this lab. Let's see what are the tools in place for the monitoring and learning pieces with the next lab.
 
-Next lab: [Lab 4 - Monitor and Learn](../Lab%204%20-%20Monitor%20and%20Learn/README.md)
+Next lab: [Lab 4 - Continuous Monitoring](../Lab%204%20-%20Continuous%20Monitoring/README.md)
