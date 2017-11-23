@@ -2,6 +2,8 @@ queue: Hosted VS2017
 variables:
   RestoreBuildProjects: "src/MainWebApplication/MainWebApplication/MainWebApplication.csproj\nsrc/MainWebApplication/MainWebApplicationUnitTests/MainWebApplicationUnitTests.csproj"
   BuildConfiguration: release
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  NUGET_XMLDOC_MODE: skip
 steps:
 #web app
 - task: dotNetCoreCLI@1
