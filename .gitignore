@@ -7,4 +7,6 @@ src/MainWebApplication/MainWebApplication/wwwroot/lib/
 /src/MainWebApplication/MainWebApplicationUnitTests/obj/
 /src/MainWebApplication/MainWebApplicationSeleniumTests/bin/
 /src/MainWebApplication/MainWebApplicationSeleniumTests/obj/
+/src/MainWebApplication/MainWebApplicationAzureResourceGroup/bin/
+/src/MainWebApplication/MainWebApplicationAzureResourceGroup/obj/
 /src/MainWebApplication/packages/
