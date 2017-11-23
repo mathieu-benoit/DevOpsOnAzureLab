@@ -23,10 +23,10 @@ namespace MainWebApplicationUnitTests
             var expectedResult = x + y;
 
             //Act
-            var realResult = additionService.Add(x, y);
+            var actualResult = additionService.Add(x, y);
 
             //Assert
-            Assert.Equal(expectedResult, realResult);
+            Assert.Equal(expectedResult, actualResult);
         }
     }
 }
