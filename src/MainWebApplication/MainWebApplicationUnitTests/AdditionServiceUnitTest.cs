@@ -13,11 +13,11 @@ namespace MainWebApplicationUnitTests
         }
 
         [Theory]
-        [InlineData(0, 0, 0)]
-        [InlineData(1, 1, 2)]
-        [InlineData(2, 1, 3)]
-        [InlineData(1, 2, 3)]
-        public void Test_Add(int x, int y, int result)
+        [InlineData(0, 0)]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(1, 2)]
+        public void Test_Add(int x, int y)
         {
             //Arrange
             var expectedResult = x + y;
