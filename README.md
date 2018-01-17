@@ -19,7 +19,7 @@ Note: It's important to follow the lab in the order exposed, each lab add a key 
 
 - 1 Microsoft Azure subscription
   - If you don't have one, give it a try: [https://azure.microsoft.com/free/](https://azure.microsoft.com/fr-fr/free/)
-- 1 Visual Studio Team Services account + 1 VSTS Project
+- 1 Visual Studio Team Services account + 1 VSTS Project (with Git)
   - If you don't have one, give it a try: [https://www.visualstudio.com/team-services](https://www.visualstudio.com/team-services)
 - 1 Slack account + 1 Slack channel
   - If you don't have one, give it a try: [https://slack.com/](https://slack.com/)

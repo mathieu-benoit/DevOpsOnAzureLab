@@ -28,8 +28,8 @@ You will go through 3 main sections in this lab:
 ## Create the VSTS Build definition and expose the "app", "infra" and "ui-tests" artifacts
 
 1. Open a **new web browser instance in Incognito, Private or InPrivate mode** to avoid any signed-in session conflict.
-2. Go to your VSTS account `https://<yourvstsaccount.visualstudio.com` and open your VSTS project for this lab.
-  - *Note: with the step below you will need to activate the `Build YAML definitions` preview features for your VSTS account.*
+2. Go to your VSTS account `https://<your-vsts-account>.visualstudio.com` and open your VSTS project for this lab.
+  - *Note: with the step below you may need to activate the `Build YAML definitions` preview features for your VSTS account.*
 3. Navigate to **Build and Release** > **Build** tab and click on the **New definition** or **New** button and select the template: `Config as code` > `YAML` and click on the **Apply** button:
 
 ![VSTSBuild - New Definition](./imgs/VSTSBuild-NewDefinition.PNG)

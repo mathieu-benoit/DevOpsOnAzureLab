@@ -45,8 +45,8 @@ Note: this GitHub repository you are importing contains a sample ASP.NET Core we
 
 ## Setup Slack notification for "Pull Request created"
 
-8. Sign-in with your Slack account for this lab - for example: `https://atq-qc-2017.slack.com`.
-9. Go to this new app configuration link: `https://atq-qc-2017.slack.com/apps/new/A0F81FPF0-visual-studio-team-services`, type the `#code` channel and click on the **Add Visual Studio Integration** button.
+8. Sign-in with your Slack account for this lab - for example: `https://<your-slack-account>.slack.com`.
+9. Go to this new app configuration link: `https://<your-slack-account>.slack.com/apps/new/A0F81FPF0-visual-studio-team-services`, type the `#code` channel and click on the **Add Visual Studio Integration** button.
 
 ![Slack - Add Visual Studio Integration - Code Pushed](./imgs/Slack-AddVisualStudioIntegration-CodePushed.PNG)
 

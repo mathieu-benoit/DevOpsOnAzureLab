@@ -56,7 +56,7 @@ You will go through 3 main sections in this lab:
 
 ## Customize your VSTS Dashboard
 
-7. Go to your VSTS account `https://<yourvstsaccount>.visualstudio.com` and open your VSTS project for this lab
+7. Go to your VSTS account `https://<your-vsts-account>.visualstudio.com` and open your VSTS project for this lab
 
 8. Navigate to the **Dashboards** tab and click on the **Edit Dashboard** > **+** buttons at the bottom right hand corner:
 

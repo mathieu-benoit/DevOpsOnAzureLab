@@ -31,9 +31,7 @@ You will go through 5 main sections in this lab:
 
 ## Configure the CheckUrl extension and the Azure Resource Manager service endpoint and import a pre-built Release definition
 
-*Note: For the Agile Tour Quebec 2017, skip this section and [go directly to the next section](#edit-and-customize-the-imported-release-definition). These steps have already been done for you to save some time for your lab, so just start by editing the `CD` Release definition.*
-
-- Go to your VSTS account `https://<yourvstsaccount>.visualstudio.com` and open your VSTS project for this lab
+- Go to your VSTS account `https://<your-vsts-account>.visualstudio.com` and open your VSTS project for this lab
 - Install the CheckUrl extension - https://marketplace.visualstudio.com/items?itemName=saeidbabaei.checkUrl
 - Configure an Azure Resource Manager endpoint for example with the name `Azure Pass - Connection`:
 
