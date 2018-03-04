@@ -12,6 +12,7 @@ namespace MainWebApplication
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseHealthChecks("/hc")
                 .UseApplicationInsights()
                 .UseStartup<Startup>()
                 .Build();
